@@ -15,8 +15,8 @@ __pycache__/
 
 # C extensions
 *.so
-*.idea
-
+*.idea\
+*.idea/
 
 # Distribution / packaging
 .Python
@@ -93,7 +93,10 @@ celerybeat-schedule
 # virtualenv
 venv/
 ENV/
-captainconsole/venv/
+/venv
+\venv
+CaptainConsole/venv/
+CaptainConsole\venv\
 
 # Spyder project settings
 .spyderproject
