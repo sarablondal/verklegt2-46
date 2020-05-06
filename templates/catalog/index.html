@@ -3,12 +3,9 @@ Mun breytast þá -->
 {% extends 'base.html' %}
 {% block content %}
     <h3> Hello from the index function within the console app!</h3>
-    <div class='catalog'>
+    <div>
     {% for console in consoles %}
-        <h4>{{ console.name }}</h4>
-        <p> {{ console.description }}</p>
-        <p> {{ console.company }}</p>
-        <p>{{ console.price }}</p>
+    {% include 'catalog/singleConsole.html' with console=console %}
     {% endfor %}
     </div>
 {% endblock %}

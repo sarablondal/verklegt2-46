@@ -11,6 +11,9 @@ class Console(models.Model):
     company = models.CharField(max_length=255)
     price = models.FloatField()
 
+    #def __str__(self):
+        #return self.name
+
 class ConsoleImage(models.Model):
     image = models.CharField(max_length=999)
     console = models.ForeignKey(Console, on_delete=models.CASCADE)
