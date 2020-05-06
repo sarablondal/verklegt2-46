@@ -10,3 +10,7 @@ class Console(models.Model):
     category = models.ForeignKey(ConsoleCategory, on_delete=models.CASCADE),
     company = models.CharField(max_length=255),
     price = models.FloatField()
+
+class CandyImage(models.Model):
+    image = models.CharField(max_length=999)
+    console = models.ForeignKey(Console, on_delete=models.CASCADE)
