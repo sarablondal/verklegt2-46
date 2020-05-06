@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
+    <h3> Hello from the index function within the console app!</h3>
     <div class='catalog'>
-        <title>Catalog</title>
-
-
+    {% for console in consoles %}
+        <h4>{{ console.name }}</h4>
+        <p>{{ console.price }}</p>
+    {% endfor %}
     </div>
 {% endblock %}
