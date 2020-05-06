@@ -1,9 +1,13 @@
+<!-- Var að testa með tengingu milli skráa og sjá hvort að þetta displayið vörum úr views og seinna meir úr gagnagrunninum
+Mun breytast þá -->
 {% extends 'base.html' %}
 {% block content %}
     <h3> Hello from the index function within the console app!</h3>
     <div class='catalog'>
     {% for console in consoles %}
         <h4>{{ console.name }}</h4>
+        <p> {{ console.description }}</p>
+        <p> {{ console.company }}</p>
         <p>{{ console.price }}</p>
     {% endfor %}
     </div>

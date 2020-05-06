@@ -1,7 +1,11 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+#taka þetta út þegar gögn eru komin í gagnagrunninn okkar
+consoles = [
+    {'name': 'Super mario', 'description': 'Leikur character sem er að bjarga prinsessu', 'company': 'Nintendo', 'price': 9.99}
+]
+
 # Create your views here.
 
 def index(request):
-    #þessu verður svo breytt seinna, mkundi ekki hvernig ég gerði hitt atm en fínt að hafa í grunninn bara :)
-    return HttpResponse("<h1>Hello form the index view in the  console app<h1>")
+    return render(request, 'catalog/index.html', context={'consoles':consoles})
