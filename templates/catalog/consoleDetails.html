@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h1>{{ console.name }}</h1>
+    <p> {{ console.description }}</p>
+    <p> {{ console.category }}</p>
+    <p> {{ console.company }}</p>
+    <p> {{ console.price }}</p>
+    {% for console_image in console.consoleimage_set.all %}
+        <img src="{{ console_image.image }}" class="..." />
+    {% endfor %}
+
+{% endblock %}
