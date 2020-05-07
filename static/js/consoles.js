@@ -1,3 +1,4 @@
+/* NOT ready, en komið langa leið runnar ekki, */
 $(document).ready(function(){
     $('#searchBtn').on(types: 'click', selector: fucntion(e){
         e.preventDefault();
