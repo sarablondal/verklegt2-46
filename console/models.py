@@ -3,6 +3,8 @@ from django.db import models
 # Create your models here.
 class ConsoleCategory(models.Model):
     name = models.CharField(max_length=255)
+    def __str__(self):
+        return self.name
 
 class Console(models.Model):
     name = models.CharField(max_length=255)
@@ -11,8 +13,8 @@ class Console(models.Model):
     company = models.CharField(max_length=255)
     price = models.FloatField()
 
-    #def __str__(self):
-        #return self.name
+    def __str__(self):
+        return self.name
 
 class ConsoleImage(models.Model):
     image = models.CharField(max_length=999)
