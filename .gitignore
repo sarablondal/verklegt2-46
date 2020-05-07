@@ -327,8 +327,11 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 *.xml
 <<<<<<< HEAD
+<<<<<<< HEAD
 /venv/
 .idea/workspace.xml
 /CaptainConsole/.idea/
+=======
+>>>>>>> parent of 40aa181... venv
 =======
 >>>>>>> parent of 40aa181... venv
