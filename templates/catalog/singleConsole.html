@@ -1,6 +1,7 @@
     <!-- viljum við samt ekki bara sýna nafn og mynd þegar við displayum allar vörurunar og svo kemur nánari
     lýsing þegar er ýtt á vöruna, þá verður vefsíðan hreinni þegar litið er á allar vörur.-->
     <section class = "item-views">
+        <a href="/consoles/{{ console.id }}">
         <div class= "item-view">
             <div class = "item-img">
                 <img src="{{ console.consoleimage_set.first.image }}" />
@@ -27,4 +28,5 @@
             <button class = "cta-add">add to cart</button>
         </div>
     </div>
+        </a>
     </section>
