@@ -5,11 +5,14 @@ class ConsoleCategory(models.Model):
     name = models.CharField(max_length=255)
 
 class Console(models.Model):
-    name = models.CharField(max_length=255),
-    description = models.CharField(max_length=999),
-    category = models.ForeignKey(ConsoleCategory, on_delete=models.CASCADE),
-    company = models.CharField(max_length=255),
+    name = models.CharField(max_length=255)
+    description = models.CharField(max_length=999)
+    category = models.ForeignKey(ConsoleCategory, on_delete=models.CASCADE)
+    company = models.CharField(max_length=255)
     price = models.FloatField()
+
+    #def __str__(self):
+        #return self.name
 
 class ConsoleImage(models.Model):
     image = models.CharField(max_length=999)

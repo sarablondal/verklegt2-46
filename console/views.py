@@ -1,7 +1,15 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from console.models import Console
+
 # Create your views here.
 
 def index(request):
-    #þessu verður svo breytt seinna, mkundi ekki hvernig ég gerði hitt atm en fínt að hafa í grunninn bara :)
-    return HttpResponse("<h1>Hello form the index view in the  console app<h1>")
+    context = {'consoles': Console.objects.all()}  #order_by('name')
+    return render(request, 'catalog/index.html', context)
+
+# sækir gögn fyrir tiltekið console url, t.d. localhost:3000/consoles/3
+def getConsoleById(request, id):
+    return render(request, 'catalog/consoleDetails.html', {
+        'console': get_object_or_404(Console, pk=id)
+    })
+

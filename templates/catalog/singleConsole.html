@@ -1,0 +1,32 @@
+    <!-- viljum við samt ekki bara sýna nafn og mynd þegar við displayum allar vörurunar og svo kemur nánari
+    lýsing þegar er ýtt á vöruna, þá verður vefsíðan hreinni þegar litið er á allar vörur.-->
+    <section class = "item-views">
+        <a href="/consoles/{{ console.id }}">
+        <div class= "item-view">
+            <div class = "item-img">
+                <img src="{{ console.consoleimage_set.first.image }}" />
+            </div>
+
+            <div class="item-title">
+                {{ console.name }}
+            </div>
+
+            <div class = "item-desc">
+                {{ console.description }}
+            </div>
+
+            <div class = "item-company">
+                {{ console.company }}
+            </div>
+
+            <div class = "item-price">
+                {{ console.price }} $
+            </div>
+        <!-- buttons hjá hverju item view síðu-->
+        <div class= "cta">
+            <button class = "cta-select">select</button>
+            <button class = "cta-add">add to cart</button>
+        </div>
+    </div>
+        </a>
+    </section>
