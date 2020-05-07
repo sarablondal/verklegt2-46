@@ -1,5 +1,8 @@
 from django.shortcuts import render, get_object_or_404
+
+from console.forms.consoleForm import consoleCreateForm
 from console.models import Console
+
 
 # Create your views here.
 
@@ -13,3 +16,12 @@ def getConsoleById(request, id):
         'console': get_object_or_404(Console, pk=id)
     })
 
+
+def createConsole(request):
+    if request.method == 'POST':
+        print(1)
+    else:
+        form = consoleCreateForm()
+    return render(request, 'console/createConsole.html', {
+        'form': form
+    })
