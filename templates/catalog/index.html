@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h3> Hello from the index function within the console app!</h3>
-    <div>
+        <!-- CATALOG INDEX SKJAL -->
+    <div style="background-color:lightgrey;">
+    <h3> THIS IS ALL PRODUCTS!</h3>
     {% for console in consoles %}
     {% include 'catalog/singleConsole.html' with console=console %}
     {% endfor %}

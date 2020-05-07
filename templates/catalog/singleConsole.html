@@ -1,11 +1,29 @@
-<!-- gætir reynt að koma þessu í eitthvað look þannig að allar myndir eru t.d. jafnstórar, raða þeim einhvernveginn
-upp flott og jább :)-->
-<div> <!-- sara setur class á þetta og style'ar -->
-    <a href="">
-    <img src="{{ console.consoleimage_set.first.image }}" />
-        <h4>{{ console.name }}</h4>
-        <p> {{ console.description }}</p>
-        <p> {{ console.company }}</p>
-        <p>{{ console.price }}</p>
-    </a>
-</div>
+    <!-- -->
+    <section class = "item-views">
+        <div class= "item-view">
+            <div class = "item-img">
+                <img src="{{ console.consoleimage_set.first.image }}" />
+            </div>
+
+            <div class="item-title">
+                {{ console.name }}
+            </div>
+
+            <div class = "item-desc">
+                {{ console.description }}
+            </div>
+
+            <div class = "item-company">
+                {{ console.company }}
+            </div>
+
+            <div class = "item-price">
+                {{ console.price }} $
+            </div>
+        <!-- buttons hjá hverju item view síðu-->
+        <div class= "cta">
+            <button class = "cta-select">select</button>
+            <button class = "cta-add">add to cart</button>
+        </div>
+    </div>
+    </section>
