@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     # http://localhost:8000/consoles
-    path('', views.index, name="consoleIndex"),
-    path('<int:id>', views.getConsoleById, name="consoleDetails")
+    path('', views.consoleIndex, name="consoleIndex"),
+    path('<int:id>', views.getConsoleById, name="consoleDetails"),
+    path('createConsole', views.createConsole, name="createConsole")
 ]

@@ -6,9 +6,9 @@ from console.models import Console
 
 # Create your views here.
 
-def index(request):
+def consoleIndex(request):
     context = {'consoles': Console.objects.all()}  #order_by('name')
-    return render(request, 'catalog/index.html', context)
+    return render(request, 'catalog/consoleIndex.html', context)
 
 # sækir gögn fyrir tiltekið console url, t.d. localhost:3000/consoles/3
 def getConsoleById(request, id):
@@ -22,6 +22,6 @@ def createConsole(request):
         print(1)
     else:
         form = consoleCreateForm()
-    return render(request, 'console/createConsole.html', {
+    return render(request, 'catalog/createConsole.html', {
         'form': form
     })
