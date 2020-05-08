@@ -2,45 +2,56 @@
 * {
 	margin: 0px;
 	padding: 0px;
-	box-sizing: border-box;
+	box-sizing: content-box;
 }
 /* body allur texti */
 body {
 	font-family: 'Poppins', sans-serif;
+
 }
 /* sections auto dót */
+section {
+	margin: 20px;
+}
 button {
 	font-family: 'Poppins', sans-serif;
 }
 /* header */
 header {
 	display: flex;
-	width: 100%;
 	height: 10vh;
-	margin: auto;
+	width: 100%;
 	align-items: center;
 }
 /*dót í navbar*/
-.navbar-brand,
+
+
+.form-group,
+.btn-default,
+.nav-item,
+.navbar-form,
+.dropdown-item,
+.btn-default,
 .navbar,
-.nav-item
-.navbar-form
-.dropdown-menu
-.dropdown-item
-.cart {
+.nav-cart {
 	display: flex;
+	justify-content: space-between;
+}
+.logo-img{
+	flex: 1;
 }
 .navbar{
-
+	flex: 3;
+	justify-items: stretch;
 }
 
-.logo-img {
-	font-weight: 400;
-	margin: 5px;
+.nav-cart{
+	filter: opacity(70%);
+	color: #fbff66;
+	justify-content: space-around;
 }
+
 .navbar-toggler{
-
-}
-.navbar-toggler-icon{
-
+	display: flex;
+	justify-content: flex-end;
 }
