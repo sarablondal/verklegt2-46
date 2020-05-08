@@ -6,7 +6,10 @@
 }
 /* body allur texti */
 body {
+	text-space: auto;
+	background-color: #53575a;
 	font-family: 'Poppins', sans-serif;
+	color: white;
 
 }
 /* sections auto dót */
@@ -16,6 +19,11 @@ section {
 button {
 	font-family: 'Poppins', sans-serif;
 }
+/* auto texta stillingar*/
+font {
+	color: whitesmoke;
+}
+
 /* header */
 header {
 	display: flex;
@@ -23,8 +31,27 @@ header {
 	width: 100%;
 	align-items: center;
 }
-/*dót í navbar*/
+/* Solid border */
+hr.solid {
+  border-top: 3px solid #bbb;
+}
 
+footer {
+	padding-top: 5px;
+  	color: white;
+  	text-align: center;
+  	height: fit-content;
+  	text-shadow: 1px 1px 1px black;
+}
+.row,
+.col,
+.footer-links{
+	list-style: none;
+	text-decoration: none;
+	color: whitesmoke;
+}
+
+/*dót í navbar*/
 
 .form-group,
 .btn-default,
@@ -41,15 +68,23 @@ header {
 .logo-img{
 	flex: 1;
 }
+.nav-item {
+	float: start;
+	text-align: center;
+	text-decoration: none;
+	font-size: 22px;
+}
 .navbar{
+	position: relative;
+	flex-wrap: nowrap;
 	flex: 3;
 	align-items: center;
-	justify-items: stretch;
+	justify-content: space-between;
 }
 
-.nav-cart,
-.nav-search{
-	filter: opacity(70%);
+
+.nav-cart {
+	filter: invert(100%);
 	color: #fbff66;
 	justify-content: space-around;
 }

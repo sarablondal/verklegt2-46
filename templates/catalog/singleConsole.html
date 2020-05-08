@@ -1,22 +1,28 @@
-    <section class = "catalog-views">
-        <a href="/consoles/{{ console.id }}">
-        <div class= "catalog-view">
-            <div class = "catalog-item-img">
-                <img src="{{ console.consoleimage_set.first.image }}" />
-            </div>
-        </a>
+<div class="container">
+    <div class="col-md-auto">
+        <section class = "catalog-views">
+            <div class="row">
+                <a href="/consoles/{{ console.id }}">
+                <div class= "catalog-view">
+                    <div class = "catalog-item-img">
+                        <img src="{{ console.consoleimage_set.first.image }}" />
+                    </div>
+                </div>
+                </a>
 
-            <div class="catalog-item-title">
-                {{ console.name }}
-            </div>
+                    <div class="catalog-item-title">
+                        {{ console.name }}
+                    </div>
 
-            <div class = "catalog-item-price">
-                {{ console.price }} $
-            </div>
-        <!-- buttons hjá hverju item view síðu-->
-        <div class= "catalog-cta">
-            <button class = "catalog-cta-select">select</button>
-            <button class = "catalog-cta-add">add to cart</button>
-        </div>
-    </div>
-    </section>
+                    <div class = "catalog-item-price">
+                        {{ console.price }} $
+                    </div>
+                <!-- buttons hjá hverju item view síðu-->
+                <div class= "catalog-cta">
+                    <button class = "catalog-cta-select">select</button>
+                    <button class = "catalog-cta-add">add to cart</button>
+                </div>
+                </div>
+        </section>
+     </div>
+ </div>
