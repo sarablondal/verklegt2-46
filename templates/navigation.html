@@ -1,49 +1,56 @@
 <header>
-    <div class="navbar navbar-default">
-            <div class = "logo-container">
-                <a class="logo-img" href="">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+          <a class="navbar-brand" href="#">
+              <a class="logo-img" href="">
                     <img src="../static/img/clogo1.png" width="100" height="100" alt="">
                     </a>
-            </div>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
             <!-- aðal navbar links -->
         <nav>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav-links">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
                  <!-- CATALOG DROPDOWN -->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">CATALOG<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">CONSOLES</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">GAMES</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">OTHER</a></li>
-                        </ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            CATALOG
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">CONSOLES</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">GAMES</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">OTHER</a>
+                        </div>
                     </li>
-                    <li><a href="{% url 'about_usindex'%}">ABOUT US</a></li>
-                    <!-- LINK -->
-                    <li><a href="{% url 'my_accountindex'%}">MY ACCOUNT</a></li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="{% url 'about_usindex'%}">ABOUT US</a>
+                          </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'my_accountindex'%}">MY ACCOUNT</a>
+                    </li>
+                    <li class="nav-cart">
+                        <a class="nav-link" href="#"><img src="../static/img/cart1.svg" width="40" height="40" alt=""> </a>
+                    </li>
+
+
                 <!-- SEARCH TAKKI -->
                     <form class="navbar-form navbar-left">
                         <div class="form-group">
                         <!-- edit breki, tengja search bar við leitar function bakendamegin, editaði bara input type=
                          og gaf searchbox og serachbtn id-->
-                        <input type="text" class="form-control" id="searchBox" placeholder="Search...">
+                        <button type="submit" class="btn btn-default" id="searchBtn" placeholder="Search...">
+                        <img src="../static/img/search.svg" width="20" height="20" alt=""></button>
                         </div>
-                        <button type="submit" class="btn btn-default" id="searchBtn">SEND</button>
                     </form>
-                <!-- MORE TAKKINN MEÐ DROPDOWN-->
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false">MORE<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">CONSOLES</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
 
         </nav>
-    </div>
+    </nav>
 </header>
