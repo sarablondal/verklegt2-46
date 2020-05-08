@@ -1,13 +1,10 @@
 <header>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
           <a class="navbar-brand" href="#">
               <a class="logo-img" href="{% url 'frontpageIndex'%}">
-                    <img src="../static/img/clogo1.png" width="100" height="100" alt="">
-                    </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <img src="../static/img/clogo2.png" width="100" height="100" alt=""> </a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
               </button>
-          </a>
 
 
             <!-- aðal navbar links -->
@@ -32,24 +29,28 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'my_accountindex'%}">MY ACCOUNT</a>
                     </li>
-                    <li class="nav-cart">
-                        <a class="nav-link" href="#"><img src="../static/img/cart1.svg" width="40" height="40" alt=""> </a>
-                    </li>
+                        <li class="nav-cart">
+                            <a class="nav-link" href="#"><img src="../static/img/cart1.svg" width="40" height="40" alt=""> </a>
+                        </li>
+                        <li class="nav-search">
+                            <a class="nav-search" href="#"><img src="../static/img/search.svg" width="30" height="30" alt=""> </a>
+                        </li>
 
 
-                <!-- SEARCH TAKKI -->
-                    <form class="navbar-form navbar-left">
-                        <div class="form-group">
-                        <!-- edit breki, tengja search bar við leitar function bakendamegin, editaði bara input type=
-                         og gaf searchbox og serachbtn id-->
+                <!-- SEARCH TAKKI
+                    <form class="form-inline my-2 my-sm-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button></form>
+                         edit breki, tengja search bar við leitar function bakendamegin, editaði bara input type=
+                         og gaf searchbox og serachbtn id
                         <button type="submit" class="btn btn-default" id="searchBtn" placeholder="Search...">
                         <img src="../static/img/search.svg" width="20" height="20" alt=""></button>
                         </div>
-                    </form>
+                    </form>-->
                         </ul>
                     </li>
                 </ul>
             </div>
-        
+
     </nav>
 </header>

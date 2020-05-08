@@ -33,7 +33,8 @@ header {
 .dropdown-item,
 .btn-default,
 .navbar,
-.nav-cart {
+.nav-cart,
+.nav-search{
 	display: flex;
 	justify-content: space-between;
 }
@@ -42,10 +43,12 @@ header {
 }
 .navbar{
 	flex: 3;
+	align-items: center;
 	justify-items: stretch;
 }
 
-.nav-cart{
+.nav-cart,
+.nav-search{
 	filter: opacity(70%);
 	color: #fbff66;
 	justify-content: space-around;
