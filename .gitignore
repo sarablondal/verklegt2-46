@@ -336,7 +336,11 @@ fabric.properties
 =======
 >>>>>>> parent of 40aa181... venv
 .idea/CaptainConsole.iml
-console/__pycache__/models.cpython-37.pyc
+console/__pycache__/
 console/__pycache__/urls.cpython-37.pyc
 console/__pycache__/views.cpython-37.pyc
 console/forms/__pycache__/consoleForm.cpython-37.pyc
+CaptainConsole/__pycache__/settings.cpython-37.pyc
+console/__pycache__/models.cpython-37.pyc
+console/forms/__pycache__/consoleForm.cpython-37.pyc
+console/forms/
