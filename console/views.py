@@ -60,3 +60,6 @@ def updateConsole(request, id):
         'form': form,
         'id': id
     })
+
+def cartIndex(request):
+    return render(request, "cart/cart.html")

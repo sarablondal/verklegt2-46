@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+    <h3>This is the cart!</h3>
+    <form id="shopping-cart" action="cart.html" method="post">
+    <table class="shopping-cart">
+        <thead>
+            <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Qty</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <p id="sub-total">
+        <strong>Sub Total</strong>: <span id="stotal"></span>
+    </p>
+    <ul id="shopping-cart-actions">
+        <li>
+            <input type="submit" name="update" id="updateCart" class="btn" value="Update Cart" />
+        </li>
+        <li>
+            <input type="submit" name="delete" id="emptyCart" class="btn" value="Empty Cart" />
+        </li>
+        <li><input action="action" onclick="window.history.go(-1); return false;" type="submit" value="Continue shopping" class="btn"/>
+            <!-- <a href="" class="btn">Continue Shopping</a> -->
+        </li>
+        <li>
+            <a href="checkout.html" class="btn">Go To Checkout</a>
+        </li>
+    </ul>
+</form>
+{% endblock%}

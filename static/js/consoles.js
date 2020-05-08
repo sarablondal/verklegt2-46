@@ -1,4 +1,5 @@
 /* NOT ready, en komið langa leið runnar ekki, */
+/*
 $(document).ready(function(){
     $('#searchBtn').on(types: 'click', selector: fucntion(e){
         e.preventDefault();
@@ -22,9 +23,11 @@ $(document).ready(function(){
                 $('#serachBox').val(value: '');
             },
             error: function(xhr, status, error) {
-                /* fix this and handle error */
-                console.log(error)
-            }
+
+                /*console.log(error)*/
+            /*}
         })
     });
 });
+
+*/

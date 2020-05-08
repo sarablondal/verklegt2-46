@@ -21,7 +21,12 @@
                         {{ console.price }} $
 
                 <!--    <button class = "catalog-cta-select">select</button>-->
-                    <button class = "catalog-cta-add">add to cart</button>
+                <!--    <button class = "catalog-cta-add">add to cart</button>
+                Commenta þetta út því ég aðeins að breyta til
+                að testa cart og sjá hvort ég geti addað to cart-->
+                        <form class="" action="cart" method="post">{% csrf_token %}
+                            <p><input type="submit" value="Add To cart" class="catalog-cta-add"></p>
+                        </form>
                         </div>
                 </div>
 

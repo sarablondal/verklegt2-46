@@ -25,5 +25,6 @@ urlpatterns = [
     path('consoles/consoles', include('consoles_sale.urls')),
     path('consoles/games', include('games.urls')),
     path('consoles/others', include('others.urls')),
-    path('home/', include('frontpage.urls'))
+    path('home/', include('frontpage.urls')),
+    path('cart/', include('cart.urls'))
 ]
