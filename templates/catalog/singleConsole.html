@@ -2,14 +2,14 @@
         <section class = "catalog-views">
             <div class="row">
                 <a href="/consoles/{{ console.id }}">
-                <div class= "catalog-view">
+                <div class= "col-sm">
                     <div class = "catalog-item-img">
                         <img src="{{ console.consoleimage_set.first.image }}" />
                     </div>
                 </div>
                 </a>
-            </div>
 
+            <div class= "col-sm">
                 <div class="catalog-item-title">
                         {{ console.name }}
                     </div>
@@ -28,6 +28,7 @@
                         </form>
                         </div>
                 </div>
-
+            </div>
+            </div>
         </section>
  </div>
