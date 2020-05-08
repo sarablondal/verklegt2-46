@@ -62,4 +62,7 @@ def updateConsole(request, id):
     })
 
 def cartIndex(request):
-    return render(request, "cart/cart.html")
+    return render(request, "purchase/../templates/cart/cart.html")
+
+def checkout(request):
+    return render(request, "purhcase/checkout.html")
