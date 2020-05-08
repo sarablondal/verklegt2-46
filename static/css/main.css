@@ -16,6 +16,9 @@ body {
 section {
 	margin: 20px;
 }
+h3{
+	margin-top: 50px;
+}
 button {
 	font-family: 'Poppins', sans-serif;
 }
@@ -42,6 +45,9 @@ footer {
   	text-align: center;
   	height: fit-content;
   	text-shadow: 1px 1px 1px black;
+	position:relative;
+	margin-top: -100px;
+	clear:both;
 }
 .row,
 .col,

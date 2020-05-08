@@ -6,6 +6,22 @@
 	min-height: 60vh;
 	align-items: center;
 }
+section
+{
+	display:inline-block;
+	float:left;
+}
+
+section > .container{
+	min-width: 100px;
+	max-width: 27%;
+	max-height: 200px;
+	margin-left: 20px;
+	float: left;
+	display:inline-block;
+}
+
+
 
 .item-view {
 	flex: 1;
@@ -78,14 +94,17 @@
 	margin: auto;
 	min-height: 60vh;
 	align-items: center;
+	float: left;
+	display:inline-flex;
 }
 
 .catalog-item-view {
 	max-block-size: auto;
+	color:red;
 }
 
 .catalog-item-title {
-	font-size: 44px;
+	font-size: 22px;
 	font-weight: 500;
 	background: linear-gradient(to right, #f6f6fa, #fbff66);
 	-webkit-background-clip: text;
@@ -104,7 +123,8 @@
 	flex: 1;
 	display: flex;
 	justify-content:right;
-	height: 40vh;
+	height: 50px;
+	width: 50px;
 }
 
 /* image með animation */
