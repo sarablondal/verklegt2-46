@@ -1,33 +1,22 @@
-    <!-- viljum við samt ekki bara sýna nafn og mynd þegar við displayum allar vörurunar og svo kemur nánari
-    lýsing þegar er ýtt á vöruna, þá verður vefsíðan hreinni þegar litið er á allar vörur.-->
-    <section class = "item-views">
+    <section class = "catalog-views">
         <a href="/consoles/{{ console.id }}">
-        <div class= "item-view">
-            <div class = "item-img">
+        <div class= "catalog-view">
+            <div class = "catalog-item-img">
                 <img src="{{ console.consoleimage_set.first.image }}" />
             </div>
+        </a>
 
-            <div class="item-title">
+            <div class="catalog-item-title">
                 {{ console.name }}
             </div>
 
-            <!--<div class = "item-desc">
-                {{ console.description }}
-            </div>
-
-            <div class = "item-company">
-                {{ console.company }}
-            </div>  commentaði þetta út því þetta á ekki að vera hér inn á þessari síðu frekar inn í consoleDetails
-                    -Breki. -->
-
-            <div class = "item-price">
+            <div class = "catalog-item-price">
                 {{ console.price }} $
             </div>
         <!-- buttons hjá hverju item view síðu-->
-        <div class= "cta">
-            <button class = "cta-select">select</button>
-            <button class = "cta-add">add to cart</button>
+        <div class= "catalog-cta">
+            <button class = "catalog-cta-select">select</button>
+            <button class = "catalog-cta-add">add to cart</button>
         </div>
     </div>
-        </a>
     </section>

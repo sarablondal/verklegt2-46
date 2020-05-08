@@ -1,13 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
+    <section class = "item-views">
+        <div class= "item-view">
+            <div class = "item-img">
+                {% for console_image in console.consoleimage_set.all %}
+                    <img src="{{ console_image.image }}" class="..." />
+                {% endfor %}
+            </div>
 
-    <h1>{{ console.name }}</h1>
-    <p> {{ console.description }}</p>
-    <p> {{ console.category }}</p>
-    <p> {{ console.company }}</p>
-    <p> {{ console.price }}</p>
-    {% for console_image in console.consoleimage_set.all %}
-        <img src="{{ console_image.image }}" class="..." />
-    {% endfor %}
+            <div class="item-title">
+                {{ console.name }}
+            </div>
 
+            <div class = "item-desc">
+                {{ console.description }}
+            </div>
+
+            <div class = "item-company">
+                {{ console.company }}
+            </div>
+        
+            <div class = "item-price">
+                {{ console.price }} $
+            </div>
+
+
+
+        <!-- buttons hjá hverju item view síðu-->
+        <div class= "cta">
+            <button class = "cta-select">select</button>
+            <button class = "cta-add">add to cart</button>
+        </div>
+    </section>
 {% endblock %}
