@@ -9,5 +9,6 @@ urlpatterns = [
     path('createConsole', views.createConsole, name="createConsole"),
     path('deleteConsole/<int:id>', views.deleteConsole, name="deleteConsole"),
     path('updateConsole/<int:id>', views.updateConsole, name="updateConsole"),
-    path('cart', views.cartIndex, name= "cartIndex")
+    path('cart', views.cartIndex, name= "cartIndex"),
+    path('cart/checkout', views.checkout, name="checkout")
 ]
