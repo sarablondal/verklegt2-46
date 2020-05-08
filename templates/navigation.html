@@ -1,7 +1,7 @@
 <header>
     <div class="navbar navbar-default">
             <div class = "logo-container">
-                <a class="logo-img" href="#">
+                <a class="logo-img" href="">
                     <img src="../static/img/clogo1.png" width="100" height="100" alt="">
                     </a>
             </div>
@@ -21,9 +21,9 @@
                             <li><a href="#">OTHER</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">ABOUT US</a></li>
+                    <li><a href="{% url 'about_usindex'%}">ABOUT US</a></li>
                     <!-- LINK -->
-                    <li><a href="#">MY ACCOUNT</a></li>
+                    <li><a href="{% url 'my_accountindex'%}">MY ACCOUNT</a></li>
                 <!-- SEARCH TAKKI -->
                     <form class="navbar-form navbar-left">
                         <div class="form-group">
