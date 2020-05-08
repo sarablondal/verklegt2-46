@@ -19,7 +19,7 @@ console.log(sessionStorage.getItem('cart'));
 var cartValue = sessionStorage.getItem('cart');
 var cartobject = JSON.parse(cartValue);
 console.log(cartobject);*/
-
+/*
 (function( $ ) {
     $.Shop = function( element ) {
         this.$element = $( element ); // top-level element
@@ -43,5 +43,5 @@ $(function() {
     var shop = new $.Shop( "#site" );
     console.log( shop.$element );
 });
-
+*/
 
