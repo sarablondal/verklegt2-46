@@ -22,7 +22,6 @@ section > .container{
 }
 
 
-
 .item-view {
 	flex: 1;
 }
@@ -37,7 +36,7 @@ section > .container{
 
 .item-desc {
 	margin-top: 5px;
-	font-size: 22px;
+	font-size: 18px;
 	color: whitesmoke;
 }
 
@@ -55,7 +54,7 @@ section > .container{
 }
 /* cta eru item buttons */
 .cta {
-	padding: 50px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
 }
 
 .cta-select {
@@ -76,11 +75,11 @@ section > .container{
 	font-size: 16px;
 	border: none;
 	color: black;
-	margin: 30px 0px 0px 30px;
+	margin: 0px 0px 0px 0px;
 }
 /* item images */
 .item-img img{
-	margin-top: 10px;
+	margin: 10px;
 	flex: 1;
 	display: flex;
 	justify-content:center;
@@ -88,23 +87,18 @@ section > .container{
 }
 
 /* Catalog margar */
-.catalog-item-views {
-	display: flex;
-	width: 90%;
+.catalog-views{
+	display: block;
+	width: 100%;
 	margin: auto;
 	min-height: 60vh;
 	align-items: center;
-	float: left;
-	display:inline-flex;
 }
 
-.catalog-item-view {
-	max-block-size: auto;
-	color:red;
-}
 
 .catalog-item-title {
-	font-size: 22px;
+	font-size: initial;
+	align-content: center;
 	font-weight: 500;
 	background: linear-gradient(to right, #f6f6fa, #fbff66);
 	-webkit-background-clip: text;
@@ -113,20 +107,34 @@ section > .container{
 
 .catalog-item-price {
 	margin-top: 5px;
-	font-size: 22px;
+	font-size: unset;
 	color: whitesmoke;
 	justify-content: space-between;
 }
 /* item images */
 .catalog-item-img img{
-	margin-top: 10px;
-	flex: 1;
 	display: flex;
-	justify-content:right;
+	height: 100px;
+	width: 100px;
+}
+.catalog-cta-select {
+	border: 2px solid yellow;
+	background: transparent;
+	color: yellow;
+	width: 150px;
 	height: 50px;
-	width: 50px;
+	cursor: pointer;
+	font-size: 16px;
 }
 
+.catalog-cta-add {
+	border: 2px solid yellow;
+	background: transparent;
+	color: yellow;
+	cursor: pointer;
+	size: auto;
+	margin: 5px 5px 5px 5px;
+}
 /* image með animation */
 .img img {
 	height: 100%;

@@ -4,7 +4,7 @@
         <div class= "item-view">
             <div class = "item-img">
                 {% for console_image in console.consoleimage_set.all %}
-                    <img src="{{ console_image.image }}" class="..." />
+                    <img src="{{ console_image.image }}" class="rounded float-left" />
                 {% endfor %}
             </div>
 
@@ -22,14 +22,14 @@
 
             <div class = "item-price">
                 {{ console.price }} $
+
+            </div>
+     <!-- buttons hjá hverju item view síðu-->
+            <div class= "cta">
+                <button class = "cta-add">add to cart</button>
             </div>
 
 
-
-        <!-- buttons hjá hverju item view síðu-->
-        <div class= "cta">
-            <button class = "cta-select">select</button>
-            <button class = "cta-add">add to cart</button>
         </div>
     </section>
 {% endblock %}
