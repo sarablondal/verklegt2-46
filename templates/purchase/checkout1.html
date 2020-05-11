@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% extends "breadcrumbs.html" %}
+{% block content %}
 <form>
+<h3>Contact information</h3>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputFirstName">First name</label>
@@ -306,3 +308,5 @@
 <button type="submit" class="btn btn-primary">Continue</button>
 </form>
 </div>
+
+{% endblock %}
