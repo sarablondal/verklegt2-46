@@ -1,35 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
-    <section class = "item-views">
-        <div class= "item-view">
-            <div class = "item-img">
-                {% for console_image in console.consoleimage_set.all %}
-                    <img src="{{ console_image.image }}" class="rounded float-left" />
-                {% endfor %}
-            </div>
-
-            <div class="item-title">
-                {{ console.name }}
-            </div>
-
-            <div class = "item-desc">
-                {{ console.description }}
-            </div>
-
-            <div class = "item-company">
-                {{ console.company }}
-            </div>
-
-            <div class = "item-price">
-                {{ console.price }} $
-            </div>
-
-     <!-- buttons hjá hverju item view síðu-->
-            <div class= "cta">
-                <button class = "cta-add">add to cart</button>
-            </div>
-
-
+    <div class = "item-views">
+        <div class = "item-img">
+            {% for console_image in console.consoleimage_set.all %}
+                <img src="{{ console_image.image }}" class="rounded float-left" />
+            {% endfor %}
         </div>
-    </section>
+        <h1> {{ console.name }} </h1>
+        <p>  {{ console.description }} </p>
+        <h3> {{ console.company }} </h3>
+        <h2> {{ console.price }} $ </h2>
+
+        <form class="" action="cart" method="post">{% csrf_token %}
+            <p><input type="submit" value="add to cart" class="catalog-cta-add"></p>
+        </form>
+
+    </div>
 {% endblock %}
