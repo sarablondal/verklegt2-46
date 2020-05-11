@@ -1,34 +1,10 @@
-<div class="container">
-        <section class = "catalog-views">
-            <div class="row">
-                <a href="/consoles/{{ console.id }}">
-                <div class= "col-sm">
-                    <div class = "catalog-item-img">
-                        <img src="{{ console.consoleimage_set.first.image }}" />
-                    </div>
-                </div>
-                </a>
-
-            <div class= "col-sm">
-                <div class="catalog-item-title">
-                        {{ console.name }}
-                    </div>
-
-                <!-- buttons hjá hverju item view síðu-->
-                <div class= "catalog-cta">
-                    <div class = "catalog-item-price">
-                        {{ console.price }} $
-
-                <!--    <button class = "catalog-cta-select">select</button>-->
-                <!--    <button class = "catalog-cta-add">add to cart</button>
-                Commenta þetta út því ég aðeins að breyta til
-                að testa cart og sjá hvort ég geti addað to cart-->
-                        <form class="" action="cart" method="post">{% csrf_token %}
-                            <p><input type="submit" value="Add To cart" class="catalog-cta-add"></p>
-                        </form>
-                        </div>
-                </div>
-            </div>
-            </div>
-        </section>
- </div>
+<div class ="catalog-views">
+    <a href="/consoles/{{ console.id }}">
+        <img class="catalog-item-img"src="{{ console.consoleimage_set.first.image }}" />
+        <h3> {{ console.name }} </h3>
+        <h4> {{ console.price }} $ </h4>
+    </a>
+    <form class="" action="cart" method="post">{% csrf_token %}
+        <p><input type="submit" value="Add To cart" class="catalog-cta-add"></p>
+    </form>
+</div>
