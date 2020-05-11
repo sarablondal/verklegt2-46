@@ -24,6 +24,16 @@ def consoleIndex(request):
     context = {'consoles': Console.objects.all()}  #order_by('name')
     return render(request, 'catalog/consoleIndex.html', context)
 
+###########################################
+def sortNameIndex(request):
+    context = {'consoles': Console.objects.all().order_by('name')}  # order_by('name')
+    return render(request, 'catalog/consoleIndex.html', context)
+
+def sortPriceIndex(request):
+    context = {'consoles': Console.objects.all().order_by('price')}  # order_by('price')
+    return render(request, 'catalog/consoleIndex.html', context)
+###########################################
+
 # sækir gögn fyrir tiltekið console url, t.d. localhost:3000/consoles/3
 def getConsoleById(request, id):
     return render(request, 'catalog/consoleDetails.html', {

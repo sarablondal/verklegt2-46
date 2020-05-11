@@ -10,6 +10,19 @@
         <button type="button" id="searchBtn" class="btn btn-default">Search</button>
     </div>
     </div>
+
+      <!-- sort by DROPDOWN listi -->
+    <li class="sortby dropdown">
+        <a class="dropdown-toggle" href="#" id="sortbyDropdown" role="button" data-toggle="dropdown">SORT BY</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="{% url 'sortByName'%}">NAME</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'sortByPrice'%}">PRICE</a>
+        </div>
+    </li>
+
+
+
     {% for console in consoles %}
     {% include 'catalog/singleConsole.html' with console=console %}
     {% endfor %}
