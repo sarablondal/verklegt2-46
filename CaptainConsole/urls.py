@@ -22,6 +22,6 @@ urlpatterns = [
     path('consoles/', include('console.urls')),
     path('about_us/', include('about_us.urls')),
     path('my_account/', include('my_account.urls')),
-    #path('home/', include('frontpage.urls')),
-    path('cart/', include('cart.urls'))
+    path('cart/', include('cart.urls')),
+    path('user/', include('user.urls'))
 ]
