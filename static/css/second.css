@@ -88,11 +88,13 @@ section > .container{
 
 /* Catalog margar */
 .catalog-views{
-	display: block;
-	width: 100%;
+	display: inline-block;
+	<!--width: 100%; -->
+	width: 400px;
 	margin: auto;
 	min-height: 60vh;
 	align-items: center;
+	text-align: center;
 }
 
 
@@ -112,10 +114,11 @@ section > .container{
 	justify-content: space-between;
 }
 /* item images */
-.catalog-item-img img{
+.catalog-item-img {
 	display: flex;
 	height: 100px;
 	width: 100px;
+	margin: 0 auto;
 }
 .catalog-cta-select {
 	border: 2px solid yellow;
