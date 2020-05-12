@@ -1,10 +1,13 @@
 <div class ="catalog-views">
+
     <a href="/consoles/{{ console.id }}">
         <img class="catalog-item-img"src="{{ console.consoleimage_set.first.image }}" />
         <h3 class="catalog-item-title"> {{ console.name }} </h3>
         <h4 class="catalog-item-price"> {{ console.price }} $ </h4>
     </a>
+
     <form class="" action="cart" method="post">{% csrf_token %}
         <p><input type="submit" value="add to cart" class="catalog-cta-add"></p>
+
     </form>
 </div>
