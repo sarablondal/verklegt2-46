@@ -17,11 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-    path('', include('frontpage.urls')),
+    path('', include('frontpage.urls')), #til að fara beint á forsíðu
     path('admin/', admin.site.urls),
     path('consoles/', include('console.urls')),
     path('about_us/', include('about_us.urls')),
     path('my_account/', include('my_account.urls')),
-    path('home/', include('frontpage.urls')),
+    #path('home/', include('frontpage.urls')),
     path('cart/', include('cart.urls'))
 ]
