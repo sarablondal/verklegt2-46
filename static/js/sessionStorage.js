@@ -8,15 +8,15 @@ var updatedTotal = total * quantity;
 sessionStorage.setItem('total', updatedTotal);
 console.log("this is updated total" + sessionStorage.getItem('total'));
 
-var cart = {
+var store = {
     item: "Zelda",
     price: 9.99,
     qty: 2
 };
-var jsonStr = JSON.stringify(cart);
+var jsonStr = JSON.stringify(store);
 sessionStorage.setItem('store', jsonStr);
-console.log(sessionStorage.getItem('cart'));
-var cartValue = sessionStorage.getItem('cart');
+console.log(sessionStorage.getItem('store'));
+var cartValue = sessionStorage.getItem('store');
 var cartobject = JSON.parse(cartValue);
 console.log(cartobject);*/
 /*
