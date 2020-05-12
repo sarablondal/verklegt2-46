@@ -9,11 +9,8 @@ urlpatterns = [
     path('createConsole', views.createConsole, name="createConsole"),
     path('deleteConsole/<int:id>', views.deleteConsole, name="deleteConsole"),
     path('updateConsole/<int:id>', views.updateConsole, name="updateConsole"),
+    path('cart', views.cartIndex, name= "cartIndex"),
+    path('cart/checkout', views.checkout, name="checkout"),
     path('sortbyname', views.sortNameIndex, name = "sortByName"),
-    path('sortbyprice', views.sortPriceIndex, name = "sortByPrice"),
-    #sara
-    path('', views.store, name="store"),
-    path('store/', views.cart, name="store"),
-    path('checkout/', views.checkout, name="checkout"),
-
+    path('sortbyprice', views.sortPriceIndex, name = "sortByPrice")
 ]

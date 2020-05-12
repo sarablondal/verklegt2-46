@@ -2,12 +2,9 @@
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
           <a class="navbar-brand" href="#">
               <a class="logo-img" href="{% url 'frontpageIndex'%}">
-                    <img src="../static/img/clogo2.png" width="100" height="100" alt="">
-              </a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                  span class="navbar-toggler-icon"></span>
+                    <img src="../static/img/clogo2.png" width="100" height="100" alt=""> </a><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
               </button>
-          </a>
 
 
             <!-- aðal navbar links -->
@@ -26,20 +23,18 @@
                             <a class="dropdown-item" href="">OTHER</a>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about_usindex'%}">ABOUT US</a>
-                    </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="{% url 'about_usindex'%}">ABOUT US</a>
+                          </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'my_accountindex'%}">MY ACCOUNT</a>
                     </li>
-
-                    <div class="form-inline my-2 my-lg-0">
-                        <a href="#"class="btn btn-warning">Login</a>
-                        <a href="#">
-                            <img  id="cart-icon" src="../static/img/cart1.svg">
-                        </a>
-                        <p id="cart-total">0</p>
-                    </div>
+                        <li class="nav-cart">
+                            <a class="nav-link" href="#"><img src="../static/img/cart1.svg" width="40" height="40" alt=""> </a>
+                        </li>
+                        <li class="nav-search">
+                            <a class="nav-search" href="#"><img src="../static/img/search.svg" width="30" height="30" alt=""> </a>
+                        </li>
 
 
                 <!-- SEARCH TAKKI
@@ -56,5 +51,6 @@
                     </li>
                 </ul>
             </div>
+
     </nav>
 </header>
