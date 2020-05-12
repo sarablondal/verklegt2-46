@@ -11,6 +11,6 @@ urlpatterns = [
     path('updateConsole/<int:id>', views.updateConsole, name="updateConsole"),
     path('cart', views.cartIndex, name= "cartIndex"),
     path('cart/checkout', views.checkout, name="checkout"),
-    path('/sortbyname', views.sortNameIndex, name = "sortByName"),
-    path('/sortbyprice', views.sortPriceIndex, name = "sortByPrice")
+    path('sortbyname', views.sortNameIndex, name = "sortByName"),
+    path('sortbyprice', views.sortPriceIndex, name = "sortByPrice")
 ]
