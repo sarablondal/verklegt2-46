@@ -23,7 +23,6 @@ $(document).ready(function(){
 
 
 $('#searchBox').on('click', function (e) {
-    e.preventDefault()
     if(localStorage.getItem('searchHistory') != null) {
         var history = ''
         var localStorageStrList = localStorage.getItem('searchHistory')
