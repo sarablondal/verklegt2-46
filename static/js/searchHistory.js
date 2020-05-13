@@ -36,9 +36,6 @@ $('#searchBox').on('click', function (e) {
     }
 })
 
-$('#searchBox').on('click', function() {
-    $('#history').show();
-});
 
 
 
