@@ -5,7 +5,6 @@ import console
 from console.forms.consoleForm import ConsoleCreateForm, ConsoleUpdateForm
 from console.models import Console
 
-
 # Create your views here.
 
 def consoleIndex(request):

@@ -11,7 +11,7 @@
         <h3> {{ console.company }} </h3>
         <h2> {{ console.price }} $ </h2>
 
-        <form class="" action="cart" method="post">{% csrf_token %}
+        <form class="" action="/cart/" method="post">{% csrf_token %}
             <p><input type="submit" value="add to cart" class="catalog-cta-add"></p>
         </form>
 

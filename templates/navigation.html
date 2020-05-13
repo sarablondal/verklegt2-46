@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
           <a class="navbar-brand" href="#">
               <a class="logo-img" href="{% url 'frontpageIndex'%}">
-                    <img src="../static/img/clogo2.png" width="100" height="100" alt="">
+                    <img src="{% static "img/clogo2.png" %}" width="100" height="100" alt="">
               </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
@@ -41,7 +41,7 @@
                             <p id="cart-total">{{cartItems}}</p>
 
                         <li class="nav-search">
-                            <a class="nav-search" href="#"><img src="../static/img/search.svg"  alt=""> </a>
+                            <a class="nav-search" href="#"><img src="{% static "img/search.svg" %}"  alt=""> </a>
                         </li>
                     </div>
 

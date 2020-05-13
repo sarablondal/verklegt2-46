@@ -1,6 +1,8 @@
 import json
 from .models import *
 
+import console
+from console.views import *
 
 def cookieCart(request):
     # Create empty cart for now for non-logged in user
