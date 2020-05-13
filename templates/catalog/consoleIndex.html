@@ -24,8 +24,9 @@
     </li>
 
 
-
+<div class="product">
     {% for console in consoles %}
     {% include 'catalog/singleConsole.html' with console=console %}
     {% endfor %}
+</div>
 {% endblock %}

@@ -1,9 +1,10 @@
-console.log("searchHistory working");
+
 $(document).ready(function(){
     $('#searchBtn').on('click', function (e) {
         e.preventDefault()
         var searchValue = $('#searchBox').val()
         if (localStorage.getItem('searchHistory') == null){
+            /* ef localStorage fyrir searchHistory er ekki til þá búa það til og pusha searchvalue frá user í localstorage */
             var searchList = []
             searchList.push(searchValue.toLowerCase())
             /*var jsonString = searchVal.JSON.stringify(searchList)*/
@@ -11,6 +12,7 @@ $(document).ready(function(){
         } else {
             var jsonString = localStorage.getItem('searchHistory')
             var searchList = JSON.parse(jsonString)
+            /* check for duplicates */
             if(!(searchList.includes(searchValue.toLowerCase()))){
                 searchList.push(searchValue.toLowerCase())
             }
@@ -23,21 +25,19 @@ $(document).ready(function(){
 $('#searchBox').on('click', function (e) {
     e.preventDefault()
     if(localStorage.getItem('searchHistory') != null) {
-        console.log('mememememe')
         var history = ''
         var localStorageStrList = localStorage.getItem('searchHistory')
-        console.log(localStorageStrList)
+
         var localStorageList = JSON.parse(localStorageStrList)
         for(let i=0; i<localStorageList.length; i++){
             history += '<option>' + localStorageList[i] + '</option>'
         };
-        console.log(history)
         document.getElementById('history').innerHTML = history
     }
 })
 
-$('#searchBox').hover(function() {
-    $('#history').toggle();
+$('#searchBox').on('click', function() {
+    $('#history').show();
 });
 
 

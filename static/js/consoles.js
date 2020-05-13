@@ -1,5 +1,4 @@
-/* NOT ready, en komið langa leið runnar ekki, smá villa */
-console.log("ég er hér123")
+/* NOT ready, en komið langa leið runnar ekki, smá villa að það birtist fleiri en eitt instance af hverri vöru*/
 $(document).ready(function () {
     $('#searchBtn').on('click', function (e) {
         e.preventDefault();
@@ -10,6 +9,7 @@ $(document).ready(function () {
             success: function (resp) {
                 console.log(resp.data)
                 var newHtml = resp.data.map(d => {
+                    console.log(d)
                     return `<div class ="catalog-views">
                                 <a href="/consoles/${ d.id }">
                                     <img class="catalog-item-img" src="${ d.firstImage }" />
@@ -21,7 +21,7 @@ $(document).ready(function () {
                                 </form>
                             </div>`
                 });
-                $('.catalog-views').html(newHtml.join(""));
+                $('.product').html(newHtml.join(""));
                 $('#searchBox').val('')
             },
             error: function(xhr, status, error) {
