@@ -4,6 +4,18 @@
 	text-align: center;
 }
 
+.input-group {
+	margin-left: 50px;
+	width:75%;
+	margin: 0 auto 0 auto;
+}
+
+.sortbyDropdown {
+	width:75%;
+	margin-left: 50px;
+	margin: 0 auto 0 auto;
+}
+
 .item-views {
 	display: flex;
 	width: 90%;
