@@ -6,7 +6,7 @@ from user.models import Profile
 
 
 def user(request):
-    return render(request, "user/index.html")
+    return render(request, "user/userIndex.html")
 
 def register(request):
     if request.method == 'POST':

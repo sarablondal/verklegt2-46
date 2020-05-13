@@ -40,7 +40,6 @@ INSTALLED_APPS = [
 
     'console.apps.ConsoleConfig',
     'about_us.apps.AboutUsConfig',
-    'my_account.apps.MyAccountConfig',
     'cart.apps.CartConfig',
     'user.apps.UserConfig',
 
