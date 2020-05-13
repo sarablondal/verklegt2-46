@@ -1,4 +1,9 @@
 /* single console dót */
+.product {
+	padding-top: 20px;
+	text-align: center;
+}
+
 .item-views {
 	display: flex;
 	width: 90%;
@@ -6,6 +11,7 @@
 	min-height: 60vh;
 	align-items: center;
 }
+
 section
 {
 	display:inline-block;
@@ -94,7 +100,8 @@ section > .container{
 	display: inline-block;
 	width: 400px;
 	margin: auto;
-	min-height: 60vh;
+	height: 400px;
+	/*min-height: 60vh; */
 	align-items: center;
 	text-align: center;
 }
@@ -105,6 +112,7 @@ section > .container{
 	align-content: center;
 	font-weight: 500;
 	color: black;
+	margin-top: 10px;
 /*	background: linear-gradient(to right, #f6f6fa, #fbff66);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;*/
@@ -119,9 +127,9 @@ section > .container{
 /* item images */
 .catalog-item-img {
 	display: flex;
-	height: 100px;
-	width: 100px;
-	margin: 0 auto;
+	height: 200px;
+	width: 200px;
+	margin: 0 auto 0 auto;
 }
 .catalog-cta-select {
 	border: 2px solid red;
