@@ -29,28 +29,31 @@ section > .container{
 .item-title {
 	font-size: 44px;
 	font-weight: 500;
-	background: linear-gradient(to right, #ffffff, #fbff66);
+	color: black;
+/*	background: linear-gradient(to right, #ffffff, #fbff66);
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;*/
 }
 
 .item-desc {
 	margin-top: 5px;
 	font-size: 18px;
-	color: whitesmoke;
+	color: dimgray;
 }
 
 .item-company {
 	margin-top: 5px;
 	font-style: oblique;
 	font-size: 16px;
-	color: whitesmoke;
+	color: dimgray;
+/*	color: whitesmoke;*/
 }
 
 .item-price {
 	margin-top: 5px;
 	font-size: 22px;
-	color: whitesmoke;
+	color: dimgray;
+/*	color: whitesmoke;*/
 }
 /* cta eru item buttons */
 .cta {
@@ -58,9 +61,9 @@ section > .container{
 }
 
 .cta-select {
-	border: 2px solid yellow;
+	border: 2px solid darkred;
 	background: transparent;
-	color: yellow;
+	color: red;
 	width: 150px;
 	height: 50px;
 	cursor: pointer;
@@ -68,7 +71,7 @@ section > .container{
 }
 
 .cta-add {
-	background: yellow;
+	background: darkred;
 	width: 150px;
 	height: 50px;
 	cursor: pointer;
@@ -101,15 +104,16 @@ section > .container{
 	font-size: initial;
 	align-content: center;
 	font-weight: 500;
-	background: linear-gradient(to right, #f6f6fa, #fbff66);
+	color: black;
+/*	background: linear-gradient(to right, #f6f6fa, #fbff66);
 	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;*/
 }
 
 .catalog-item-price {
 	margin-top: 5px;
 	font-size: unset;
-	color: whitesmoke;
+	color: dimgray;
 	justify-content: space-between;
 }
 /* item images */
@@ -120,9 +124,9 @@ section > .container{
 	margin: 0 auto;
 }
 .catalog-cta-select {
-	border: 2px solid yellow;
+	border: 2px solid red;
 	background: transparent;
-	color: yellow;
+	color: darkred;
 	width: 150px;
 	height: 50px;
 	cursor: pointer;
@@ -130,9 +134,9 @@ section > .container{
 }
 
 .catalog-cta-add {
-	border: 2px solid yellow;
+	border: 2px solid darkred;
 	background: transparent;
-	color: yellow;
+	color: red;
 	cursor: pointer;
 	size: auto;
 	margin: 5px 5px 5px 5px;
@@ -190,3 +194,4 @@ section > .container{
 		height: 80%;
 	}
 }
+

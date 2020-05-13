@@ -3,6 +3,11 @@ from . import views
 
 
 urlpatterns = [
-    #http://localhost:8000/cart
-    path('', views.cartIndex, name= "cartIndex"),
+	#Leave as empty string for base url
+	path('', views.cart, name="cart"),
+
+	path('checkout/', views.checkout, name="checkout"),
+
+	path('update_item/', views.updateItem, name="update_item"),
+	path('process_order/', views.processOrder, name="process_order"),
 ]
