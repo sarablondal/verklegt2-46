@@ -1,13 +1,12 @@
-
         var shipping = '{{order.shipping}}'
         var total = '{{order.get_cart_total|floatformat:2}}'
 
         if (shipping == 'False'){
-            document.getElementById('shipping-info').innerHTML = ''
+                document.getElementById('shipping-info').innerHTML = ''
         }
 
         if (user != 'AnonymousUser'){
-            document.getElementById('user-info').innerHTML = ''
+                document.getElementById('user-info').innerHTML = ''
          }
 
         if (shipping == 'False' && user != 'AnonymousUser'){
@@ -18,11 +17,12 @@
         }
 
         var form = document.getElementById('form')
+
         form.addEventListener('submit', function(e){
         e.preventDefault()
-        console.log('Form Submitted...')
-        document.getElementById('form-button').classList.add("hidden");
-        document.getElementById('payment-info').classList.remove("hidden");
+                console.log('Form Submitted...')
+                document.getElementById('form-button').classList.add("hidden");
+                document.getElementById('payment-info').classList.remove("hidden");
     })
 
     document.getElementById('make-payment').addEventListener('click', function(e){
@@ -46,10 +46,10 @@
             }
 
             if (shipping != 'False'){
-            shippingInfo.address = form.address.value
-            shippingInfo.city = form.city.value
-            shippingInfo.state = form.state.value
-            shippingInfo.zipcode = form.zipcode.value
+                    shippingInfo.address = form.address.value
+                    shippingInfo.city = form.city.value
+                    shippingInfo.state = form.state.value
+                    shippingInfo.zipcode = form.zipcode.value
             }
 
         if (user == 'AnonymousUser'){
@@ -62,11 +62,11 @@
 
         var url = "/process_order/"
         fetch(url, {
-            method:'POST',
-            headers:{
-                    'Content-Type':'application/json',
-                    'X-CSRFToken':csrftoken,
-            },
+                method:'POST',
+                headers:{
+                        'Content-Type':'application/json',
+                        'X-CSRFToken':csrftoken,
+                },
             body:JSON.stringify({'form':userFormData, 'shipping':shippingInfo}),
 
         })

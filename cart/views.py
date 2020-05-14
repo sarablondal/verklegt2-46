@@ -7,8 +7,16 @@ from .utils import *
 import console
 from console.views import *
 
-def store(request):
+#def test(request):
+#	data = cartData(request)
+#	datadata = cookieCart(request)
 
+#	object = print(data)
+#	object2= print(datadata)
+
+#	return render(request, 'store\cart.html', object, object2 )
+
+def store(request):
 	if request.user.is_authenticated:
 		customer = request.user.customer
 		order, created = Order.objects.get_or_create(customer=customer, complete=False)
@@ -72,6 +80,7 @@ def cart(request):
 	return render(request, 'store\cart.html', context)
 
 def checkout(request):
+	data = cartData(request)
 	if request.user.is_authenticated:
 		customer = request.user.customer
 		order, created = Order.objects.get_or_create(customer=customer, complete=False)
