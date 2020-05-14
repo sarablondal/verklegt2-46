@@ -4,6 +4,7 @@ from django.http import JsonResponse
 import json
 import datetime
 from cart.models import *
+from console.models import ConsoleImage
 from .utils import *
 import console
 from console.views import *
@@ -31,18 +32,29 @@ def cart(request):
     cart = json.loads(request.COOKIES['cart'])
     itemquantity = []
     items = []
+    order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
+    cartItems = order['get_cart_items']
+
     for i in cart:
         if i == '':
             continue
 
-        item = Console.objects.filter(pk=int(i)).first()
+        cartItems += cart[i]['quantity']
+        console = Console.objects.filter(pk=int(i)).first()
+        image = ConsoleImage.objects.filter(pk=int(i)).first()
+        total = (console.price * cart[i]['quantity'])
+        order['get_cart_total'] += total
+        order['get_cart_items'] += cart[i]['quantity']
+        item = {
+            'id':console.id, 'name': console.name, 'price': console.price,
+            'imageURL': image.image, 'quantity': cart[i]['quantity'],'get_total': total,
+        }
         items.append(item)
         itemquantity.append(cart[i]['quantity'])
 
-        print(item)
-        print(cart[i]['quantity'])
+        print(items)
 
-    context = {'items': items, 'itemquantity': itemquantity}
+    context = {'items': items, 'order':order, 'cartItems':cartItems}
     return render(request, 'store\cart.html', context)
 
 

@@ -27,20 +27,14 @@
 	margin: 0 auto 0 auto;
 }
 
-.item-views {
-	display: flex;
-	width: 90%;
-	margin: auto;
-	min-height: 60vh;
-	align-items: center;
-}
 
+/*
 section
 {
 	display:inline-block;
 	float:left;
 }
-
+*/
 section > .container{
 	min-width: 100px;
 	max-width: 27%;
@@ -50,6 +44,25 @@ section > .container{
 	display:inline-block;
 }
 
+.item-center {
+	margin: 0 auto 0 auto;
+}
+
+.item-views {
+	min-height: 60vh;
+	background-color: red;
+	margin: 0 auto 0 auto;
+	width: 80%;
+}
+
+/* item images */
+.item-img {
+	/*flex: 1; */
+	display: inline-block;
+	/* justify-content:center; */
+	height: 300px;
+	width:300px;
+}
 
 .item-view {
 	flex: 1;
@@ -59,12 +72,16 @@ section > .container{
 	font-size: 44px;
 	font-weight: 500;
 	color: black;
+	display:inline-block;
 /*	background: linear-gradient(to right, #ffffff, #fbff66);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;*/
 }
 
 .item-desc {
+	display:inline-block;
+	width: 50%;
+	height: auto;
 	margin-top: 5px;
 	font-size: 18px;
 	color: dimgray;
@@ -108,14 +125,6 @@ section > .container{
 	border: none;
 	color: black;
 	margin: 0px 0px 0px 0px;
-}
-/* item images */
-.item-img img{
-	margin: 10px;
-	flex: 1;
-	display: flex;
-	justify-content:center;
-	height: 40vh;
 }
 
 /* Catalog margar */
