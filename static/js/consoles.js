@@ -18,6 +18,7 @@ $(document).ready(function () {
                                 </a>
                                 <form class="" action="cart" method="post">
                                     <button data-product="{{console.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                                    <a class="btn btn-outline-success" href="${ d.id }">View</a>
                                 </form>
                             </div>`
                 });

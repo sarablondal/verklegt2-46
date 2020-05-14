@@ -21,9 +21,10 @@ $(document).ready(function () {
                             <h3> ${d.name} </h3>
                             <h4> ${d.price} $ </h4>
                         </a>
-                        <form class="" action="cart" method="post">
+                        <!-- <form class="" action="cart" method="post"> -->
                             <p><input type="submit" value="add to cart" class="catalog-cta-add"></p>
-                        </form>
+                            <a class="btn btn-outline-success" href="${ d.id }}">View</a>
+                        <!-- </form> -->
                     </div>`
           });
           $('.product').html(newHtml.join(''));

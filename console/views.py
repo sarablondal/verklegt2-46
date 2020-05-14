@@ -21,6 +21,14 @@ def consoleIndex(request):
         return JsonResponse({'data': consoles})
     if 'categoryFilter' in request.GET:
         categoryFilter = request.GET['categoryFilter']
+        if categoryFilter == "":
+            consoles = [{
+                'id': x.id,
+                'name': x.name,
+                'price': x.price,
+                'firstImage': x.consoleimage_set.first().image
+            } for x in Console.objects.all()]
+            return JsonResponse({'data': consoles})
         consoles = [{
             'id': x.id,
             'name': x.name,
