@@ -21,24 +21,12 @@ def consoleIndex(request):
         return JsonResponse({'data': consoles})
     if 'categoryFilter' in request.GET:
         categoryFilter = request.GET['categoryFilter']
-        if len(categoryFilter) > 1:
-            categoryStr = ""
-            for i in range(len(categoryFilter)):
-                if i == (len(categoryFilter)-1):
-                    categoryStr += categoryFilter[i]
-                else:
-                    categoryStr += categoryFilter[i] + ","
-            categoryFilter = categoryStr.split(",")
-            print(categoryFilter)
-        for i in range(len(categoryFilter)):
-            consoles = [{
-                'id': x.id,
-                'name': x.name,
-                'price': x.price,
-                'categoryID': x.category_id,
-                'firstImage': x.consoleimage_set.first().image
-            } for x in Console.objects.filter(category_id=categoryFilter[i])]
-        print(consoles)
+        consoles = [{
+            'id': x.id,
+            'name': x.name,
+            'price': x.price,
+            'firstImage': x.consoleimage_set.first().image
+        } for x in Console.objects.filter(category_id=categoryFilter)]
         return JsonResponse({'data': consoles})
     context = {'consoles': Console.objects.all()}  #order_by('name')
     return render(request, 'catalog/consoleIndex.html', context)

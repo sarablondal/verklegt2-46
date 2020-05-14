@@ -1,13 +1,14 @@
 console.log('filter working');
-/*$(document).ready(function() {
+$(document).ready(function() {
     $('.cBox').on('click', function () {
       $('.cBox').not(this).prop('checked', false);
     });
-}); */
+});
 
 $(document).ready(function () {
     $('.cBox').on('click', function(e) {
       var categorySelected = $('input:checked').val();
+      console.log(categorySelected)
       $.ajax({
         url:'/consoles?categoryFilter=' + categorySelected,
         type: 'GET',
