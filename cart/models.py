@@ -8,6 +8,7 @@ from django.contrib.contenttypes.models import ContentType
 
 # Create your models here.
 
+
 class Cart(models.Model):
     creation_date = models.DateTimeField(verbose_name=_('creation date'))
     checked_out = models.BooleanField(default=False, verbose_name=_('checked out'))
