@@ -6,7 +6,7 @@ urlpatterns = [
 	#Leave as empty string for base url
 	path('', views.cart, name="cart"),
 	path('store/', views.cart, name="store"),
-	path('t', views.test, name="test"),
+	#path('t', views.test, name="test"),
 	path('view', views.updateItem, name="updateItem"),
 
 

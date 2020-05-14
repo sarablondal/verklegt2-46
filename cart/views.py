@@ -7,14 +7,6 @@ from .utils import *
 import console
 from console.views import *
 
-#def test(request):
-#	data = cartData(request)
-#	datadata = cookieCart(request)
-
-#	object = print(data)
-#	object2= print(datadata)
-
-#	return render(request, 'store\cart.html', object, object2 )
 
 def store(request):
 	if request.user.is_authenticated:
