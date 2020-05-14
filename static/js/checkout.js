@@ -1,29 +1,29 @@
-        var shipping = '{{order.shipping}}'
-        var total = '{{order.get_cart_total|floatformat:2}}'
+    var shipping = '{{order.shipping}}'
+    var total = '{{order.get_cart_total|floatformat:2}}'
 
-        if (shipping == 'False'){
-                document.getElementById('shipping-info').innerHTML = ''
-        }
+    if (shipping == 'False'){
+            document.getElementById('shipping-info').innerHTML = ''
+    }
 
-        if (user != 'AnonymousUser'){
-                document.getElementById('user-info').innerHTML = ''
-         }
+    if (user != 'AnonymousUser'){
+            document.getElementById('user-info').innerHTML = ''
+     }
 
-        if (shipping == 'False' && user != 'AnonymousUser'){
-            //Hide entire form if user is logged in and shipping is false
-                document.getElementById('form-wrapper').classList.add("hidden");
-                //Show payment if logged in user wants to buy an item that does not require shipping
-                document.getElementById('payment-info').classList.remove("hidden");
-        }
+    if (shipping == 'False' && user != 'AnonymousUser'){
+        //Hide entire form if user is logged in and shipping is false
+            document.getElementById('form-wrapper').classList.add("hidden");
+            //Show payment if logged in user wants to buy an item that does not require shipping
+            document.getElementById('payment-info').classList.remove("hidden");
+    }
 
-        var form = document.getElementById('form')
+    var form = document.getElementById('form')
 
-        form.addEventListener('submit', function(e){
-        e.preventDefault()
-                console.log('Form Submitted...')
-                document.getElementById('form-button').classList.add("hidden");
-                document.getElementById('payment-info').classList.remove("hidden");
-    })
+    form.addEventListener('submit', function(e){
+    e.preventDefault()
+            console.log('Form Submitted...')
+            document.getElementById('form-button').classList.add("hidden");
+            document.getElementById('payment-info').classList.remove("hidden");
+})
 
     document.getElementById('make-payment').addEventListener('click', function(e){
             submitFormData()
