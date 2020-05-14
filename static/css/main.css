@@ -174,3 +174,10 @@ footer {
 	display: flex;
 	justify-content: flex-end;
 }
+
+/* Container holding the image and the text */
+.imgcontainer {
+  position: relative;
+	padding: unset;
+}
+
