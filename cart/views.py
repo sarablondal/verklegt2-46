@@ -20,7 +20,7 @@ def store(request):
 		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
 		cartItems = order['get_cart_items']
 
-	products = Product.objects.all()
+	products = Console.objects.all()
 	context = {'products':products, 'cartItems':cartItems}
 	return render(request, 'store\cart.html', context)
 
@@ -85,6 +85,20 @@ def checkout(request):
 
 	context = {'items':items, 'order':order, 'cartItems':cartItems}
 	return render(request, 'store/checkout.html', context)
+#phase 2 í checkout - payment
+def checkout2(request):
+	data = cartData(request)
+
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+
+	context = {'items':items, 'order':order, 'cartItems':cartItems}
+	return render(request, 'store/checkout2.html', context)
+#phase 3 í checkout - review
+
+#phase 4 í checkout - confirmation
+
 
 def updateItem(request):
 	data = json.loads(request.body)

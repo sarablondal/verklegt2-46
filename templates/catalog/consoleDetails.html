@@ -12,7 +12,7 @@
         <h2> {{ console.price }} $ </h2>
 
         <form class="" action="/cart/" method="post">{% csrf_token %}
-            <p><input type="submit" value="add to cart" class="catalog-cta-add"></p>
+            <button data-product="{{console.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
         </form>
 
     </div>

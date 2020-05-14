@@ -17,7 +17,7 @@ $(document).ready(function () {
                                     <h4> ${ d.price } $ </h4>
                                 </a>
                                 <form class="" action="cart" method="post">
-                                    <p><input type="submit" value="add to cart" class="catalog-cta-add"></p>
+                                    <button data-product="{{console.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
                                 </form>
                             </div>`
                 });
