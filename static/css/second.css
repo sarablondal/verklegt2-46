@@ -1,3 +1,14 @@
+/* about us */
+.aboutus-text {
+	height: 550px;
+	width: 600px;
+	margin: 0 auto 0 auto;
+}
+.aboutus-text > p, h3 {
+	margin:0 auto 0 auto;
+}
+
+
 /* single console dót */
 .product {
 	padding-top: 20px;
