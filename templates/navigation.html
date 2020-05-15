@@ -16,10 +16,12 @@
                         <li class="nav-item">
                               <a class="nav-link" href="{% url 'consoleIndex'%}">CATALOG</a>
                           </li>
+                    <hr>
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'profile'%}">MY ACCOUNT</a>
                         </li>
+                        <hr>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'logout'%}">LOGOUT</a>
                         </li>
@@ -27,6 +29,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'register'%}">REGISTER</a>
                         </li>
+                        <hr>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'login'%}">LOGIN</a>
                         </li>
