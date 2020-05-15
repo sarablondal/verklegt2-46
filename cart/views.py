@@ -28,7 +28,6 @@ def store(request):
 
 
 def cart(request):
-
     data = cartData(request)
 
     cartItems = data['cartItems']
@@ -39,63 +38,6 @@ def cart(request):
     print(context)
     return render(request, 'store/cart.html', context)
 
-
-"""
-
-	if request.user.is_authenticated:
-		customer = request.user.customer
-		order, created = Order.objects.get_or_create(customer=customer, complete=False)
-		items = order.orderitem_set.all()
-		cartItems = order.get_cart_items
-		cart=json.loads(cookieCart(request.COOKIES['cart']))
-	else:
-		#Create empty cart for now for non-logged in user
-		try:
-			cart = json.loads(request.COOKIES['cart'])
-		except:
-			cart = {}
-			print('CART:', cart)
-
-		items = []
-		order = {'get_cart_total':0, 'get_cart_items':0, 'shipping':False}
-
-		cartItems = order['get_cart_items']
-
-	for i in cart:
-		#print(item)
-		#print(order)
-		#print(cart)
-		print(i)
-		#We use try block to prevent items in cart that may have been removed from causing error
-		try:
-			cartItems += cart[i]['quantity']
-
-			product = Product.objects.filter(pk=i).first()
-			print(product)
-			total = (product.price * cart[i]['quantity'])
-
-			order['get_cart_total'] += total
-			order['get_cart_items'] += cart[i]['quantity']
-
-			item = {
-				'id':product.id,
-				'product':{'id':product.id,'name':product.name, 'price':product.price,
-				'imageURL':product.imageURL}, 'quantity':cart[i]['quantity'],
-				'digital':product.digital,'get_total':total,
-				}
-			items.append(item)
-
-
-			if product.digital == False:
-				order['shipping'] = True
-		except:
-			pass
-
-	print(cart)
-	context = {'items':items, 'order':order, 'cartItems':cartItems}
-"""
-
-
 def checkout(request):
     data = cartData(request)
 
@@ -104,7 +46,6 @@ def checkout(request):
     items = data['items']
 
     context = {'items': items, 'order': order, 'cartItems': cartItems}
-    print(context)
     return render(request, 'store/checkout.html', context)
 
 
@@ -120,11 +61,26 @@ def checkout2(request):
     return render(request, 'store/checkout2.html', context)
 
 def checkout3(request):
+    data = cartData(request)
+
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
+
+    context = {'items': items, 'order': order, 'cartItems': cartItems}
+
     return render(request, 'store/checkout3.html')
 
 # phase 4 í checkout - confirmation
 
 def checkout4(request):
+    data = cartData(request)
+
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
+
+    context = {'items': items, 'order': order, 'cartItems': cartItems}
     return render(request, 'store/checkout4.html')
 
 
