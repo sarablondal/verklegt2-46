@@ -37,10 +37,12 @@
 					<div style="flex:1"><p>${{item.price|floatformat:2}}</p></div>
 					<div style="flex:1">
 						<p class="quantity">{{item.quantity}}</p>
-						<div class="quantity">
-							<img data-product="{{ productId }}" data-action= "add" class="chg-quantity" src="{% static  'img/arrow-up.png' %}">
+                        <div class="quantity">
+                            <form class="" action="addCookieItem" >{% csrf_token %}
+                                <img data-product="{{ productId }}" data-action= "add" class="chg-quantity" src="{% static  'img/arrow-up.png' %}">
+                                <img data-product="{{ productId }}" data-action= "remove" class="chg-quantity" src="{% static  'img/arrow-down.png' %}">
+                            </form>
 
-							<img data-product="{{ productId }}" data-action= "remove" class="chg-quantity" src="{% static  'img/arrow-down.png' %}">
 						</div>
 					</div>
 					<div style="flex:1"><p>{{item.get_total|floatformat:2}}</p></div>
