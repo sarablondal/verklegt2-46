@@ -1,6 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
+    {% load static %}
+    <script src="{% static 'js/checkout.js' %}"></script>
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'checkout' %}">Contact</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'checkout2' %}">Payment</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Review</li>
+  </ol>
+</nav>
+
     <h3>Review your order</h3>
 
     <div class="col-sm-8 col-sm-offset-3">
@@ -54,8 +64,9 @@
     </form>
 
 
-        <button type="button" class="btn bg-cart" onclick=""></i>Back</button>
-        <button type="submit" form="review_form" class="btn bg-cart" value="submit" href="{% url 'checkout4' %}> <i class="fa fa-cart-plus mr-2"></i> Finish your order</button>
+        <button type="" class="btn bg-cart invisible" onclick="{% url 'cart' %}"></i>Back</button>
+        <a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'cart' %}">Back</a>
+        <a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout4' %}">Finish</a>
 
     </div>
 
