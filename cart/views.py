@@ -27,7 +27,6 @@ def store(request):
     return render(request, 'store\cart.html', context)
 
 
-@login_required
 def cart(request):
     cart = json.loads(request.COOKIES['cart'])
     itemquantity = []
@@ -52,7 +51,6 @@ def cart(request):
         items.append(item)
         itemquantity.append(cart[i]['quantity'])
 
-        print(items)
 
     context = {'items': items, 'order':order, 'cartItems':cartItems}
     return render(request, 'store\cart.html', context)

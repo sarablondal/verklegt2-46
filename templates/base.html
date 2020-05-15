@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="{% static "css/second.css" %}" />
 
         <script type="text/javascript">
+
             var user = '{{request.user}}'
 
             function getToken(name) {
@@ -33,16 +34,15 @@
                 }
                 return cookieValue;
             }
+
             var csrftoken = getToken('csrftoken')
 
             function getCookie(name) {
 		    // Split cookie string and get all individual name=value pairs in an array
-		        var cookieArr = document.cookie.split(";");
-
+                var cookieArr = document.cookie.split(";");
 		    // Loop through the array elements
                 for(var i = 0; i < cookieArr.length; i++) {
                     var cookiePair = cookieArr[i].split("=");
-
                     /* Removing whitespace at the beginning of the cookie name
                     and compare it with the given string */
                     if(name == cookiePair[0].trim()) {
@@ -62,7 +62,6 @@
                 document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
             }
             console.log('Cart:', cart)
-
         </script>
 
     </head>
@@ -89,9 +88,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
      <!-- Our javascript -->
+    <script src="{% static 'js/cart.js' %}"></script>
     <script src="{% static 'js/sessionStorage.js' %}"></script>
     <script src="{% static 'js/consoles.js' %}"></script>
-    <script src="{% static 'js/cart.js' %}"></script>
     <script src="{% static 'js/searchHistory.js'%}"></script>
     <script src="{% static 'js/categoryFilter.js' %}"></script>
 
