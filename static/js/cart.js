@@ -6,7 +6,6 @@ for (i = 0; i < updateBtns.length; i++) {
 		var action = this.dataset.action
 		console.log('productId:', productId, 'Action:', action)
 		console.log('USER:', user)
-
 		if (user == 'AnonymousUser'){
 			addCookieItem(productId, action)
 		}else{
@@ -57,15 +56,16 @@ function addCookieItem(productId, action){
 	}
 	console.log('CART:', cart)
 	document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
-
 	location.reload()
 }
 
 
-
+//lsiten for click on clear cart
 $('#clearCart').on('click', function(e) {
+	//expire/delete cookies
     document.cookie = "cart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     cart = {}
     console.log('New Cart Created!', cart)
+	//create new empty cookie for cart
     document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
 })
