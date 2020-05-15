@@ -1,5 +1,5 @@
 from django.forms import widgets, ModelForm
-from user.models import ProfilePicture, Profile
+from user.models import Profile
 from django.contrib.auth.models import User
 
 
