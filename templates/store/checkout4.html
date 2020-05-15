@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% load static %}
+    <script src="{% static 'js/checkout.js' %}"></script>
+    <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{% url 'checkout' %}">Contact</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'checkout2' %}">Payment</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'checkout3' %}">Review</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Confirm</li>
+  </ol>
+</nav>
+    <h3>It's ordered!</h3>
+
+    <div>
+        <p>Thank your for your order. We hope you had a good time shopping with us.</p>
+        <h6>Captain Console</h6>
+
+    </div>
+
+
+{% endblock %}

@@ -5,6 +5,8 @@ from django.dispatch import receiver
 from django.utils.datetime_safe import datetime
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.contenttypes.models import ContentType
+from django.core.exceptions import ObjectDoesNotExist
+
 
 # Create your models here.
 
@@ -37,12 +39,12 @@ class ItemManager(models.Manager):
         return super(ItemManager, self).filter(*args, **kwargs)
 
 class Customer(models.Model):
-    user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
-    name = models.CharField(max_length=200, null=True)
-    email = models.CharField(max_length=200)
+        user = models.OneToOneField(User, null=True, blank=True, on_delete=models.CASCADE)
+        name = models.CharField(max_length=200, null=True)
+        email = models.CharField(max_length=200)
 
-    def __str__(self):
-        return self.name
+        def __str__(self):
+            return self.name
 
 
 class Product(models.Model):
