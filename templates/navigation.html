@@ -17,14 +17,11 @@
                  <!-- CATALOG DROPDOWN -->
 
                         <li class="nav-item">
-                              <a class="nav-link" href="{% url 'consoleIndex'%}">CONSOLES</a>
+                              <a class="nav-link" href="{% url 'consoleIndex'%}">CATALOG</a>
                           </li>
                           <li class="nav-item">
                               <a class="nav-link" href="{% url 'aboutUsIndex'%}">ABOUT US</a>
                           </li>
-
-
-                    <!-- tók út og setti þetta -->
                     {% if user.is_authenticated %}
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'profile'%}">MY ACCOUNT</a>
