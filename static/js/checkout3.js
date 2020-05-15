@@ -30,10 +30,13 @@ $(document).ready(function() {
     $('#cardExpDate').html("Expiration date: " + payExpDate)
 })
 
+//listen for click on confirm order
 $('#confirmOrder').on('click', function(e) {
+    //cookies expired/deleted
     document.cookie = "cart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     cart = {}
     console.log('New Cart Created!', cart)
+    //new empty instance of cart created in cookies
     document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
 })
 

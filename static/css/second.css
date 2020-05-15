@@ -134,6 +134,8 @@ section > .container{
 	margin: 0px 0px 0px 0px;
 }
 
+
+
 /* Catalog margar */
 .catalog-views{
 	display: inline-block;
@@ -143,6 +145,13 @@ section > .container{
 	/*min-height: 60vh; */
 	align-items: center;
 	text-align: center;
+}
+
+.filterByCategory{
+	width:75%;
+	margin-left: 50px;
+	margin: 0 auto 0 auto;
+
 }
 
 

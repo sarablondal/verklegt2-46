@@ -1,13 +1,16 @@
 /* NOT ready, en komið langa leið runnar ekki, smá villa að það birtist fleiri en eitt instance af hverri vöru*/
 $(document).ready(function () {
+    //listens for click on search button
     $('#searchBtn').on('click', function (e) {
         e.preventDefault();
+        //retrieve user input
         var searchText = $('#searchBox').val();
         $.ajax( {
             url:'/consoles?searchFilter=' + searchText,
             type: 'GET',
             success: function (resp) {
                 console.log(resp.data)
+                //loop throught response data from server
                 var newHtml = resp.data.map(d => {
                     console.log(d)
                     return `<div class ="catalog-views">
@@ -22,6 +25,7 @@ $(document).ready(function () {
                                 </form>
                             </div>`
                 });
+                //display new data according to userinput
                 $('.product').html(newHtml.join(""));
                 $('#searchBox').val('')
             },
@@ -31,29 +35,5 @@ $(document).ready(function () {
         })
     })
 })
-/*
-function saveText() {
-    console.log("saved to localStorage")
-    var e = document.getElementById("searchBox");
-    if(typeof(Storage) !== 'undefined') {
-        var currentValue = localStorage.getItem('searchField');
-        if (currentValue.length == 0) {
-            currentValue = e.value;
-        } else {
-            currentValue = currentValue + '\n' + e.value;
-        }
-        localStorage.setItem('searchField', currentValue);
-        alert('current value:\n\n' + localStorage.getItem('searchField'));
-    } else {
-        alert('Cannot access local storage.');
-    }
-} */
 
-                            /*<div  class="console">
-                                <a href="http://127.0.0.1:8000/consoles/${d.id}">
-                                <img class="consoleImage" src="${d.firstImage}">
-                                <h4>${d.name}</h4>
-                                <p>${d.price}</p>
-                                </a>
-                            </div>*/
 

@@ -4,9 +4,10 @@ $(document).ready(function() {
       $('.cBox').not(this).prop('checked', false);
     });
 });
-
+//Listens for click on filter
 $(document).ready(function () {
     $('.cBox').on('click', function(e) {
+        //gets value from user
       var categorySelected = $('input:checked').val();
       console.log(categorySelected)
       $.ajax({
@@ -14,6 +15,7 @@ $(document).ready(function () {
         type: 'GET',
         success: function(resp) {
           console.log(resp.data)
+            //takes the response loops throught it
           var newHtml = resp.data.map(d => {
             return `<div class ="catalog-views">
                         <a href="/consoles/${d.id}">
@@ -27,6 +29,7 @@ $(document).ready(function () {
                         <!-- </form> -->
                     </div>`
           });
+          //takes new data from the repsonse and displays
           $('.product').html(newHtml.join(''));
         },
         error: function(xhr, status, error) {
