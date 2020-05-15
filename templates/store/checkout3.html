@@ -15,10 +15,11 @@
 
     <div class="col-sm-8 col-sm-offset-3">
         <h4>Items</h4>
-        <table class="table">
+
+         <table class="table">
             <thead>
-            <th>Item: {{item.product.name}}</th>
-            <th>Quantity: x{{item.quantity}}</th>
+            <th>Item: {{order.get_cart_items}}</th>
+            <th>Quantity: {{item.quantity}}</th>
             <th>Price: ${{item.product.price|floatformat:2}}</th>
 
             </thead>
@@ -30,30 +31,28 @@
         </tr>
         </tfoot>
                 {% for item in items %}
-                    <tr><td>{{ item.product.name }}</td><td>{{ item.product.quantity }}</td><td>${{order.get_cart_total|floatformat:2}}</td></tr>
+                    <tr><td>{{ item.name }}</td><td>{{ item.quantity }}</td><td>${{order.get_cart_total|floatformat:2}}</td></tr>
                 {% endfor %}
         </table>
 
         <div>
             <h4>Buyer information</h4>
-            <div>
-                Name: <br>
-                Street name: <br>
-                House number: <br>
-                City: <br>
-                Country: <br>
-                Postal code: <br>
+                <p id="userName"></p>
+                <p id="userEmail"></p>
+                <p id="userAddress"></p>
+                <p id="userAddress2"></p>
+                <p id="userCity"></p>
+                <p id="userCountry"></p>
+                <p id="userZip"></p>
             </div>
-
-
         </div>
 
         <div>
             <h4>Payment informations</h4>
             <div>
-                Name of cardholder: <br>
-                Card Number: <br>
-                Expiration date: <br>
+                <p id="cardName">Name of cardholder:</p>
+                <p id="cardNumber">Card Number:</p>
+                <p id="expDate">Expiration date:</p>
 
             </div>
 
