@@ -23,10 +23,12 @@ $(document).ready(function() {
     var paymentInfo = JSON.parse(paymentInfo)
     var payName = paymentInfo['ccName']
     var payNumber = paymentInfo['ccNumber']
+    var payNumberLast4 = payNumber.substr(payNumber.length - 4)
+    console.log(payNumberLast4)
     var payExpDate = paymentInfo['ccExp']
     var payCcCvv = paymentInfo['ccCvv']
     $('#cardName').html("Name of cardholder: " + payName)
-    $('#cardNumber').html("Card Number: " + payNumber)
+    $('#cardNumber').html("Card Number: ****-****-****-" + payNumberLast4)
     $('#cardExpDate').html("Expiration date: " + payExpDate)
 })
 
