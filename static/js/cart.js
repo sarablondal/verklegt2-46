@@ -37,10 +37,9 @@ function updateUserOrder(productId, action){
 }
 
 function addCookieItem(productId, action){
-	console.log('User is not authenticated')
-
-	if (action == 'add'){
-		if (cart[productId] == undefined){
+    console.log('User is not authenticated')
+    if (action == 'add'){
+        if (cart[productId] == undefined){
 		cart[productId] = {'quantity':1}
 
 		}else{
@@ -61,6 +60,8 @@ function addCookieItem(productId, action){
 
 	location.reload()
 }
+
+
 
 $('#clearCart').on('click', function(e) {
     document.cookie = "cart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
