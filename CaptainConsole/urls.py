@@ -27,7 +27,6 @@ urlpatterns = [
     path('', include('frontpage.urls')), #til að fara beint á forsíðu
     path('admin/', admin.site.urls),
     path('consoles/', include('console.urls')),
-    path('about_us/', include('about_us.urls')),
     path('cart/', include('cart.urls')),
     path('user/', include('user.urls'))
 ]

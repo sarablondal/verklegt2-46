@@ -2,6 +2,7 @@ from django.forms import ModelForm, widgets
 from django import forms
 from console.models import Console
 
+#Form sem er notað sem grunnur fyrir gögn sem við notum í síðunni
 class ConsoleUpdateForm(ModelForm):
     class Meta:
         model = Console

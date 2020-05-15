@@ -1,6 +1,8 @@
 from django.shortcuts import render
 
 # Create your views here.
+
+#View sem redirect-ar í error vefsíður okkar þegar ákveðinn error er trigger-að
 def view_400(request, exception):
     return render(request, 'errors/400.html')
 
