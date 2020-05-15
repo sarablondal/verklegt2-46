@@ -1,19 +1,83 @@
 {% extends "base.html" %}
 {% block content %}
-    <div class = "item-views">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        {% for console_image in console.consoleimage_set.all %}
+                            <img class="d-block w-100" src="{{ console_image.image }}" class="item-img" />
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-item">
+                      {% for console_image in console.consoleimage_set.all %}
+                            <img class="d-block w-100" src="{{ console_image.image2 }}" class="item-img" />
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-item">
+                        {% for console_image in console.consoleimage_set.all %}
+                            <img class="d-block w-100" src="{{ console_image.image3 }}" class="item-img" />
+                        {% endfor %}
+                    </div>
+                    <div class="carousel-item">
+                        {% for console_image in console.consoleimage_set.all %}
+                            <img class="d-block w-100" src="{{ console_image.image4 }}" class="item-img" />
+                        {% endfor %}
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+
+            </div>
+            <div class="col-md-7">
+                <h3 class="card-title">{{ console.name }}</h3>
+                <p class="card-text">{{ console.description }}</p>
+                <h3 class="item-company"> {{ console.company }} </h3>
+                <h2 class="item-price"> {{ console.price }} $ </h2>
+                 <form class="" action="/cart/" method="post">{% csrf_token %}
+                    <button data-product="{{console.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--
+    <div class="col-lg-9 item-center">
+
+        <div class="card mt-4">
+            {% for console_image in console.consoleimage_set.all %}
+                <img class="card-img-top img-fluid" src="{{ console_image.image }}" class="item-img" />
+            {% endfor %}
+          <div class="card-body">
+            <h3 class="card-title">{{ console.name }}</h3>
+            <h4>{{ console.price }} $</h4>
+            <p class="card-text">{{ console.description }}</p>
+            <span class="text-warning">{{ console.company }}</span>
+          </div>
+        </div>
+        -->
+    <!-- <div class = "item-views">
         <div class = "item-img">
             {% for console_image in console.consoleimage_set.all %}
-                <img src="{{ console_image.image }}" class="rounded float-left" />
+                <img src="{{ console_image.image }}" class="item-img" class="rounded float-left" />
             {% endfor %}
         </div>
-        <h1> {{ console.name }} </h1>
-        <p>  {{ console.description }} </p>
-        <h3> {{ console.company }} </h3>
-        <h2> {{ console.price }} $ </h2>
+        <h1 class="item-title"> {{ console.name }} </h1>
+        <p class="item-desc">  {{ console.description }} </p>
+        <h3 class="item-company"> {{ console.company }} </h3>
+        <h2 class="item-price"> {{ console.price }} $ </h2><br>
+        <p>Breki að skrifa þetta til að testa</p>
 
         <form class="" action="/cart/" method="post">{% csrf_token %}
             <button data-product="{{console.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
         </form>
 
-    </div>
+    </div> -->
 {% endblock %}

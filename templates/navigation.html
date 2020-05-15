@@ -15,25 +15,36 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                  <!-- CATALOG DROPDOWN -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            CATALOG
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="">CONSOLES</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="">GAMES</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="">OTHER</a>
-                        </div>
-                    </li>
+
+                        <li class="nav-item">
+                              <a class="nav-link" href="{% url 'consoleIndex'%}">CONSOLES</a>
+                          </li>
                           <li class="nav-item">
                               <a class="nav-link" href="{% url 'aboutUsIndex'%}">ABOUT US</a>
                           </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'user'%}">MY ACCOUNT</a>
-                    </li>
+
+
+                    <!-- tók út og setti þetta -->
+                    {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'profile'%}">MY ACCOUNT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'logout'%}">LOGOUT</a>
+                        </li>
+
+                    {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'register'%}">REGISTER</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login'%}">LOGIN</a>
+                        </li>
+                    {% endif %}
+
                     <div class="form-inline my-2 my-lg-0">
+
+
 
                             <a href="{% url 'cart' %}">
                                 <img  id="cart-icon" src="{% static 'img/cart1.svg' %}">
