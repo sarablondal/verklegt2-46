@@ -4,7 +4,6 @@
 	<div class="row">
 		<div class="col-lg-12">
 			<div class="box-element">
-
 				<a  class="btn btn-outline-dark" href="{% url 'consoleIndex' %}">&#x2190; Continue Shopping</a>
 
 				<br>
@@ -14,8 +13,9 @@
 						<th><h5>Items: <strong>{{ order.get_cart_items }}</strong></h5></th>
 						<th><h5>Total:<strong> {{order.get_cart_total|floatformat:2}}</strong></h5></th>
 						<th>
-							<a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
-						</th>
+                            <a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout' %}">Checkout</a>
+						    <a id="clearCart" style="float:right; margin:5px;" class="btn btn-danger" href="{% url 'cart' %}">Clear Cart</a>
+                        </th>
 					</tr>
 				</table>
 
@@ -44,6 +44,7 @@
 						</div>
 					</div>
 					<div style="flex:1"><p>{{item.get_total|floatformat:2}}</p></div>
+
 				</div>
 				{% endfor %}
 			</div>

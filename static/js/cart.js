@@ -61,3 +61,10 @@ function addCookieItem(productId, action){
 
 	location.reload()
 }
+
+$('#clearCart').on('click', function(e) {
+    document.cookie = "cart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    cart = {}
+    console.log('New Cart Created!', cart)
+    document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+})
