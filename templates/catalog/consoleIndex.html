@@ -21,26 +21,29 @@
             <a class="dropdown-item" href="{% url 'sortByPrice'%}">PRICE</a>
         </div>
     </li>
-    <div class="filterByCategory">
-        <p>List of Categories</p>
-        <label>
-            <input type="checkbox" value="1" class="cBox" name="NES">NES</label>
-        <label>
-            <input type="checkbox" value="2" class="cBox" name="SNES">SNES</label>
-        <label>
-            <input type="checkbox" value="3" class="cBox" name="Playstation">Playstation</label>
-        <label>
-            <input type="checkbox" value="4" class="cBox" name="Dreamcast">Dreamcast</label>
-        <label>
-            <input type="checkbox" value="5" class="cBox" name="Nintendo 64">Nintendo 64</label>
-        <label>
-            <input type="checkbox" value="" class="cBox" name="See all">View all</label>
+    <div class="row">
+        <div class="col">
+            <div class="filterByCategory">
+                <label>
+                    <input type="checkbox" value="1" class="cBox" name="NES">NES</label>
+                <label>
+                    <input type="checkbox" value="2" class="cBox" name="SNES">SNES</label>
+                <label>
+                    <input type="checkbox" value="3" class="cBox" name="Playstation">Playstation</label>
+                <label>
+                    <input type="checkbox" value="4" class="cBox" name="Dreamcast">Dreamcast</label>
+                <label>
+                    <input type="checkbox" value="5" class="cBox" name="Nintendo 64">Nintendo 64</label>
+                <label>
+                    <input type="checkbox" value="" class="cBox" name="See all">View all</label>
+            </div>
+        <div class="col">
+            <div class="product">
+                {% for console in consoles %}
+                {% include 'catalog/singleConsole.html' with console=console %}
+                {% endfor %}
+            </div>
+        </div>
+        </div>
     </div>
-
-
-<div class="product">
-    {% for console in consoles %}
-    {% include 'catalog/singleConsole.html' with console=console %}
-    {% endfor %}
-</div>
 {% endblock %}
