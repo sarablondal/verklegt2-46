@@ -1,20 +1,17 @@
-{% load static %}
 <footer class="page-footer">
   <hr class="solid">
     <div class="container">
     <div class="row">
       <div class="col">
         <h5>Footer Content</h5>
-        <p>You can find us here!</p>
-          <a class="map-img">
-              <img src="{% static "img/map.png" %}">
-          </a>
+        <p>Bæta við texta hér if you want.</p>
       </div>
 
       <div class="col">
         <h5>Links</h5>
         <ul class="footer-links">
           <li><a href="{% url 'consoleIndex'%}">CATALOG</a></li>
+          <li><a href= "{% url 'aboutUsIndex'%}">ABOUT US</a></li>
           <li><a href="{% url 'user'%}">MY ACCOUNT</a></li>
         </ul>
       </div>
