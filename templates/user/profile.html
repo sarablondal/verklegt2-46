@@ -2,19 +2,18 @@
 {% load static %}
 {% block content %}
 
-    <h1> Hello {{ user.username }}! </h1>
+    </div>
+        <a
+        <img src="{{ user.profile.profile_pic }}" class="profile_pic">
 
-
+        <a class="edit" href="{% url 'edit_profile_pic' %}" >Edit profile</a>
     </div>
 
-    <img src="{{ user.profile.profile_pic }}" class="profile_pic">
-
-    <a class="edit" href="{% url 'edit_profile_pic' %}" >Edit profile</a>
-    </div>
-
-
-
-
+    <form class="form from-horizontal" method="post">
+        {% csrf_token %}
+        {{ form }}
+    <input type="submit" class="btn btn-primary" value="Update" >
+    </form>
 
 
 {% endblock %}

@@ -10,5 +10,5 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(next_page='login'), name='logout'),
     path('register/', views.register, name='register'),
     path('profile/',  views.profile, name='profile'),
-    path('edit_profile_pic/', views.edit_profile_pic, name='edit_profile_pic') #vantar að tengja
+    path('edit_profile_pic/', views.profile, name='edit_profile_pic') #vantar að tengja
 ]

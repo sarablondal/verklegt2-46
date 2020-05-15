@@ -1,7 +1,8 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-from user.form.profile_form import ImageForm
+#from user.form.profile_form import ImageForm
 from user.form.profile_form import ProfileForm
+#from user.models import ProfilePicture
 from user.models import Profile
 
 
@@ -33,6 +34,11 @@ def profile(request):
     })
 
 
+
+
+
+
+"""
 def edit_profile_pic(request):
     profile = user.objects.filter(user=request.user).first()
     if request.method == 'POST':
@@ -44,3 +50,4 @@ def edit_profile_pic(request):
         return render(request, 'user/edit_profile_pic.html', {
             'form': ImageForm(instance=profile)
         })
+"""
