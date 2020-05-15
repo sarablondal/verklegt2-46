@@ -2,13 +2,14 @@
 {% load static %}
 {% block content %}
 
-    <h1> Hello {{ user.profile.name }}! </h1>
-
-    <img src="{{ user.profile.profile_pic }}" class="profile_pic">
-
+    <h1> Hello {{ user.username }}! </h1>
 
 
     </div>
+
+    <img src="{{ user.profile.profile_pic }}" class="profile_pic">
+
+    <a class="edit" href="{% url 'edit_profile_pic' %}" >Edit profile</a>
     </div>
 
 

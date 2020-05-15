@@ -41,6 +41,6 @@ def edit_profile_pic(request):
             form.save()
             return redirect("profile")
     else:
-        return render(request, 'user/edit_profile_pic.html.html', {
+        return render(request, 'user/edit_profile_pic.html', {
             'form': ImageForm(instance=profile)
         })
