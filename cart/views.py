@@ -68,8 +68,8 @@ def checkout3(request):
     items = data['items']
 
     context = {'items': items, 'order': order, 'cartItems': cartItems}
-
-    return render(request, 'store/checkout3.html')
+    print(context)
+    return render(request, 'store/checkout3.html', context)
 
 # phase 4 í checkout - confirmation
 

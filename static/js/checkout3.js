@@ -1,8 +1,6 @@
 $(document).ready(function() {
-    console.log("checkout3 working")
     var userInfo = sessionStorage.getItem('userInfo')
     var userInfo = JSON.parse(userInfo)
-    console.log(userInfo)
     var fName = userInfo['firstName']
     var lName = userInfo['lastName']
     var email = userInfo['email']
@@ -30,5 +28,12 @@ $(document).ready(function() {
     $('#cardName').html("Name of cardholder: " + payName)
     $('#cardNumber').html("Card Number: ****-****-****-" + payNumberLast4)
     $('#cardExpDate').html("Expiration date: " + payExpDate)
+})
+
+$('#confirmOrder').on('click', function(e) {
+    document.cookie = "cart=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    cart = {}
+    console.log('New Cart Created!', cart)
+    document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
 })
 

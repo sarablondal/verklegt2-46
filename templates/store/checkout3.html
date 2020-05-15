@@ -10,10 +10,31 @@
     <li class="breadcrumb-item active" aria-current="page">Review</li>
   </ol>
 </nav>
+    <div class="row checkout3Row">
 
-    <h3>Review your order</h3>
 
-    <div class="col-sm-8 col-sm-offset-3">
+    <div class="col">
+        <a  class="btn btn-outline-dark" href="{% url 'checkout2' %}">&#x2190; Back to Payment</a>
+             <!-- <div class="box-element"> -->
+                <hr>
+                <h3>Review your order</h3>
+                <hr>
+                {% for item in items %}
+                <div class="cart-row">
+                    <div style="flex:2"><img class="row-image" src="{{item.imageURL}}"></div>
+                    <div style="flex:2"><p>{{item.name}}</p></div>
+                    <div style="flex:1"><p>${{item.price|floatformat:2}}</p></div>
+                    <div style="flex:1"><p>x{{item.quantity}}</p></div>
+                </div>
+                {% endfor %}
+                <h5>Items:   {{order.get_cart_items}}</h5>
+                <h5>Total:   ${{order.get_cart_total|floatformat:2}}</h5>
+           <!-- </div> -->
+        </div>
+
+
+
+   <!-- <div class="col-sm-8 col-sm-offset-3">
         <h4>Items</h4>
 
          <table class="table">
@@ -34,7 +55,8 @@
                     <tr><td>{{ item.name }}</td><td>{{ item.quantity }}</td><td>${{order.get_cart_total|floatformat:2}}</td></tr>
                 {% endfor %}
         </table>
-
+        -->
+    <div class="col">
         <div>
             <h4>Buyer information</h4>
                 <p id="userName"></p>
@@ -44,8 +66,8 @@
                 <p id="userCity"></p>
                 <p id="userCountry"></p>
                 <p id="userZip"></p>
-            </div>
         </div>
+
 
         <div>
             <h4>Payment informations</h4>
@@ -65,9 +87,11 @@
 
         <button type="" class="btn bg-cart invisible" onclick="{% url 'cart' %}"></i>Back</button>
         <a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'cart' %}">Back</a>
-        <a  style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout4' %}">Finish</a>
+        <a id="confirmOrder" style="float:right; margin:5px;" class="btn btn-success" href="{% url 'checkout4' %}">Finish</a>
+
+
 
     </div>
-
+    </div>
 
 {% endblock %}
