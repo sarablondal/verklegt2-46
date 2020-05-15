@@ -13,6 +13,8 @@
 
     <div class="row">
         <div class="col">
+            <form id="paymentForm" action="{% url 'checkout3' %}" method="post">
+                {% csrf_token %}
             <div class="box-element">
                 <h4 class="mb-3">Payment</h4>
                 <div class="d-block my-3">
@@ -24,10 +26,10 @@
                     <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
                     <label class="custom-control-label" for="debit">Debit card</label>
                   </div>
-                  <div class="custom-control custom-radio">
+                 <!-- <div class="custom-control custom-radio">
                     <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
                     <label class="custom-control-label" for="paypal">PayPal</label>
-                  </div>
+                  </div> -->
             </div>
                 <div class="box-element">
                     <label for="cc-name">Name on card</label>

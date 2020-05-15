@@ -16,6 +16,7 @@ $(document).ready(function(){
         }
         console.log("Paymentinfo: ", paymentInfo)
         sessionStorage.setItem('paymentInfo', JSON.stringify(paymentInfo))
+        $('#paymentForm').submit()
 
     })
 })

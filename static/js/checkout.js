@@ -10,8 +10,8 @@
 
 var form = document.getElementById('form')*/
 
-$(document).ready(function() {
-        if(sessionStorage.getItem('userInfo')){
+//$(document).ready(function() {
+        /*if(sessionStorage.getItem('userInfo')){
             var autoFillInfo = localStorage.getItem('userInfo')
             $('#firstName').text(autoFillInfo['firstName'])
             $('#lastName').html(autoFillInfo['lastName'])
@@ -22,8 +22,9 @@ $(document).ready(function() {
             $('#country').html(autoFillInfo['country'])
             $('#zip').html(autoFillInfo['zipCode'])
             console.log('breki saved')
-    }
-    $('#submitInfo').on('click', function(e) {e.preventDefault()
+    }*/
+    $('#submitInfo').on('click', function(e) {
+        e.preventDefault()
     console.log('It has been formally submitted...')
         var fName = $('#firstName').val()
         var lName = $('#lastName').val()
@@ -47,12 +48,17 @@ $(document).ready(function() {
     console.log(userInfo)
         sessionStorage.setItem('userInfo',JSON.stringify(userInfo))
         sessionStorage.getItem('userInfo')
-    })
-    })
-
-
-    //form.addEventListener('submit',  function(e){e.preventDefault()
+        $('#form').submit()
+    //form.addEventListener('submit',  function(e) {
+    //e.preventDefault()
     //console.log('It has been formally submitted...')
+    //})
+    })
+ //   })
+
+
+
+
     //document.getElementById('form-button').classList.add("hidden");
     /*document.getElementById('payment-info').classList.remove("hidden");
 })
