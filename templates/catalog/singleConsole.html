@@ -4,7 +4,7 @@
         <h3 class="catalog-item-title"> {{ console.name }} </h3>
         <h4 class="catalog-item-price"> {{ console.price }} $ </h4>
     </a>
-        <button data-product="{{console.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+        <button id="{{ console.id }}" data-product="{{console.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart" value="{{ console.id }}">Add to Cart</button>
     <a class="btn btn-outline-success" href="{{ console.id }}">View</a>
     </form>
 </div>
