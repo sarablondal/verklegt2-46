@@ -19,6 +19,6 @@ class Console(models.Model):
 class ConsoleImage(models.Model):
     image = models.CharField(max_length=999)
     console = models.ForeignKey(Console, on_delete=models.CASCADE)
-    image2 = models.CharField(max_length=999, null=True)
-    image3 = models.CharField(max_length=999, null=True)
-    image4 = models.CharField(max_length=999, null=True)
+    image2 = models.CharField(max_length=999)
+    image3 = models.CharField(max_length=999)
+    image4 = models.CharField(max_length=999)

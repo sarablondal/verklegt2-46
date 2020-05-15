@@ -15,14 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.conf import settings
 from django.conf.urls.static import static
-from django.conf.urls import handler400, handler403, handler404, handler500
-
-handler400 = 'errorhandling.views.view_400'
-handler403 = 'errorhandling.views.view_403'
-handler404 = 'errorhandling.views.view_404'
-handler500 = 'errorhandling.views.view_500'
+from django.conf import settings
 
 urlpatterns = [
     path('', include('frontpage.urls')), #til að fara beint á forsíðu
