@@ -28,32 +28,16 @@ def store(request):
 
 
 def cart(request):
-    cart = json.loads(request.COOKIES['cart'])
-    itemquantity = []
-    items = []
-    order = {'get_cart_total': 0, 'get_cart_items': 0, 'shipping': False}
-    cartItems = order['get_cart_items']
 
-    for i in cart:
-        if i == '':
-            continue
+    data = cartData(request)
 
-        cartItems += cart[i]['quantity']
-        console = Console.objects.filter(pk=int(i)).first()
-        image = ConsoleImage.objects.filter(pk=int(i)).first()
-        total = (console.price * cart[i]['quantity'])
-        order['get_cart_total'] += total
-        order['get_cart_items'] += cart[i]['quantity']
-        item = {
-            'id':console.id, 'name': console.name, 'price': console.price,
-            'imageURL': image.image, 'quantity': cart[i]['quantity'],'get_total': total,
-        }
-        items.append(item)
-        itemquantity.append(cart[i]['quantity'])
+    cartItems = data['cartItems']
+    order = data['order']
+    items = data['items']
 
-
-    context = {'items': items, 'order':order, 'cartItems':cartItems}
-    return render(request, 'store\cart.html', context)
+    context = {'items': items, 'order': order, 'cartItems': cartItems}
+    print(context)
+    return render(request, 'store/cart.html', context)
 
 
 """
@@ -120,6 +104,7 @@ def checkout(request):
     items = data['items']
 
     context = {'items': items, 'order': order, 'cartItems': cartItems}
+    print(context)
     return render(request, 'store/checkout.html', context)
 
 

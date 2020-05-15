@@ -6,7 +6,7 @@ if (user != 'AnonymousUser'){
  }
 
 var form = document.getElementById('form')
-form.addEventListener('submit', function(e){
+form.addEventListener('click', function(e){
     e.preventDefault()
     console.log('Form Submitted...')
     document.getElementById('form-button').classList.add("hidden");
@@ -20,21 +20,31 @@ function submitFormData(){
     console.log('Payment button clicked')
 
     var userFormData = {
-        'name':null,
+        'firstName':null,
+        'lastName':null,
         'email':null,
+        'address': null,
+        'address2': null,
+        'country': null,
+        'city': null,
+        'zip': null,
+
         'total':total,
     }
-/*    var shippingInfo = {
-        'address':null,
-        'city':null,
-        'state':null,
-        'zipcode':null,
-    }
-    */
 
     if (user == 'AnonymousUser'){
         userFormData.name = form.name.value
         userFormData.email = form.email.value
+    }
+    else{
+        userFormData.firstName = form.firstName.value
+        userFormData.lastName = form.lastName.value
+        userFormData.email = form.email.value
+        userFormData.address = form.address.value
+        userFormData.address2 = form.address2.value
+        userFormData.country = form.country.value
+        userFormData.city = form.city.value
+        userFormData.zip = form.zip.value
     }
 
     console.log('User Info:', userFormData)
