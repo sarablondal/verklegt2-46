@@ -2,9 +2,12 @@
 {% load static %}
 {% block content %}
 
+    </div>
         <h1 id="h1-profile">Hello {{ user.profile.name }}!</h1>
-        <img src="{{ user.profile.profile_pic }}" class="profile_pic item-view item-img">
-    
+        <img src="{{ user.profile.profile_pic }}" class="profile_pic">
+
+
+    </div>
 
     <form class="form from-horizontal" method="post">
         {% csrf_token %}

@@ -12,79 +12,74 @@
         </nav>
 
     <div class="row">
-        <div class="col">
-            <form id="paymentForm" action="{% url 'checkout3' %}" method="post">
-                {% csrf_token %}
-            <div class="box-element">
-                <h4 class="mb-3">Payment</h4>
-                <div class="d-block my-3">
-                <div class="custom-control custom-radio">
-                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
-                    <label class="custom-control-label" for="credit">Credit card</label>
-                  </div>
-                  <div class="custom-control custom-radio">
-                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                    <label class="custom-control-label" for="debit">Debit card</label>
-                  </div>
-                 <!-- <div class="custom-control custom-radio">
-                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required="">
-                    <label class="custom-control-label" for="paypal">PayPal</label>
-                  </div> -->
-            </div>
-                <div class="box-element">
-                    <label for="cc-name">Name on card</label>
-                    <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                    <small class="text-muted">Full name as displayed on card</small>
-                    <div class="invalid-feedback">
-                        Name on card is required
-                    </div>
-                </div>
-                <div class="box-element">
-                    <label for="cc-number">Credit card number</label>
-                    <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-                    <div class="invalid-feedback">
-                        Credit card number is required
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="box-element">
-                        <label for="cc-expiration">Expiration</label>
-                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
-                    <div class="invalid-feedback">
-                      Expiration date required
-                    </div>
-                    </div>
-                    <div class="box-element">
-                        <label for="cc-cvv">CVV</label>
-                        <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
-                        <div class="invalid-feedback">
-                          Security code required
+        <div class="col-md-6 mb-3">
+                <div class="box-element" id="form-wrapper">
+                    <form id="paymentForm" action="{% url 'checkout3' %}" method="post">
+                        {% csrf_token %}
+                        <div class="form-field">
+                        <h4 class="mb-3">Payment</h4>
+                        <div class="d-block my-3">
+                            <div class="custom-control custom-radio">
+                                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked="" required="">
+                                <label class="custom-control-label" for="credit">Credit card</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required="">
+                                <label class="custom-control-label" for="debit">Debit card</label>
+                            </div>
                         </div>
+                            <div class="form-field">
+                                <label for="cc-name">Name on card</label>
+                                <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                                <small class="text-muted">Full name as displayed on card</small>
+                                <div class="invalid-feedback">
+                                    Name on card is required
+                                </div>
+                            </div>
+                            <div class="form-field">
+                                <label for="cc-number">Credit card number</label>
+                                <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                                <div class="invalid-feedback">
+                                    Credit card number is required
+                                </div>
+                            </div>
+                                <div class="form-field">
+                                    <label for="cc-expiration">Expiration</label>
+                                <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                                <div class="invalid-feedback">
+                                  Expiration date required
+                                </div>
+                                    <label for="cc-cvv">CVV</label>
+                                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                                    <div class="invalid-feedback">
+                                      Security code required
+                                    </div>
+                                </div>
+                            <hr class="mb-4">
+                            <a  style="float:right; margin:5px;" class="btn btn-success  btn-block"  id='make-payment' href="{% url 'checkout3' %}">Continue to review</a>
+                            </div>
+                        </form>
                     </div>
-                    <hr class="mb-4">
-                    <a  style="float:right; margin:5px;" class="btn btn-success  btn-block"  id='make-payment' href="{% url 'checkout3' %}">Continue to review</a>
-                    </form>
-                </div>
             </div>
-        </div>
         <div class="col">
-              <div class="box-element">
-                <a  class="btn btn-outline-dark" href="{% url 'checkout' %}">&#x2190; Back to Contact information</a>
-                <hr>
-                <h3>Order Summary</h3>
-                <hr>
-                {% for item in items %}
-                <div class="cart-row">
-                    <div style="flex:2"><img class="row-image" src="{{item.imageURL}}"></div>
-                    <div style="flex:2"><p>{{item.name}}</p></div>
-                    <div style="flex:1"><p>${{item.price|floatformat:2}}</p></div>
-                    <div style="flex:1"><p>x{{item.quantity}}</p></div>
+                  <div class="box-element">
+                    <a  class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
+                    <hr>
+                    <h3>Order Summary</h3>
+                    <hr>
+                    {% for item in items %}
+                    <div class="cart-row">
+                        <div style="flex:2"><img class="row-image" src="{{item.imageURL}}"></div>
+                        <div style="flex:2"><p>{{item.name}}</p></div>
+                        <div style="flex:1"><p>${{item.price|floatformat:2}}</p></div>
+                        <div style="flex:1"><p>x{{item.quantity}}</p></div>
+                    </div>
+                    {% endfor %}
+                    <h5>Items:   {{order.get_cart_items}}</h5>
+                    <h5>Total:   ${{order.get_cart_total|floatformat:2}}</h5>
                 </div>
-                {% endfor %}
-                <h5>Items:   {{order.get_cart_items}}</h5>
-                <h5>Total:   ${{order.get_cart_total|floatformat:2}}</h5>
             </div>
         </div>
-    </div>
+     </div>
 
 {% endblock content %}
