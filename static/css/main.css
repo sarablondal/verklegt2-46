@@ -31,8 +31,10 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .bg-dark{
-	background-color: #576668 !important;
+	background-color: #4f868c!important;
 }
+
+
 
 #cart-icon{
 	width:25px;
@@ -106,10 +108,9 @@ h1,h2,h3,h4,h5,h6{
 /* header */
 header {
 	display: flex;
-	height: 15vh;
+	height: fit-content;
 	width: 100%;
-	padding-bottom: 30px;
-	align-items: center;
+	align-items: baseline;
 }
 /* Solid border */
 hr.solid {
